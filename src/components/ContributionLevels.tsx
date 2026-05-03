@@ -16,7 +16,7 @@ const levels = [
     titleKey: "level1Title" as const,
     descKey: "level1Desc" as const,
     icon: Monitor,
-    color: "from-[#1E3A6F] to-[#2a5099]",
+    color: "from-[#073b9f] to-[#173771]",
     iconBg: "bg-[#1E3A6F] text-white",
     borderColor: "border-[#1E3A6F]/20 dark:border-[#1E3A6F]/30",
     hoverBorder: "hover:border-[#1E3A6F]/50",
@@ -47,7 +47,7 @@ const levels = [
     titleKey: "level4Title" as const,
     descKey: "level4Desc" as const,
     icon: Sparkles,
-    color: "from-[#0A1C3A] to-[#1E3A6F]",
+    color: "from-[#c2c0c9] to-[#7a7981]",
     iconBg: "bg-[#0A1C3A] text-white",
     borderColor: "border-[#0A1C3A]/20 dark:border-[#0A1C3A]/30",
     hoverBorder: "hover:border-[#0A1C3A]/50",
@@ -64,7 +64,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 export default function ContributionLevels() {
