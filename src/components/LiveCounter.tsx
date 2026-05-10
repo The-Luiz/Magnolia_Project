@@ -95,14 +95,26 @@ export default function LiveCounter() {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Pulsing blurred orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.03, 0.05, 0.03] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" as const }}
+          className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#F89C24] rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.1, 1, 1.1], opacity: [0.02, 0.04, 0.02] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" as const }}
+          className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1E3A6F] rounded-full blur-3xl"
+        />
+        {/* Rotating rings */}
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" as const }}
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-[#F89C24]/10"
         />
         <motion.div
           animate={{ rotate: -360 }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" as const }}
           className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full border border-[#1E3A6F]/20"
         />
       </div>
@@ -194,6 +206,17 @@ export default function LiveCounter() {
                   className="h-4 rounded-full bg-[#1E3A6F]/10 dark:bg-white/5 [&>div]:bg-gradient-to-r [&>div]:from-[#F89C24] [&>div]:to-[#fbbf24] [&>div]:rounded-full"
                 />
               </div>
+
+              {/* Goal achieved alert */}
+              {data.progress_percent >= 100 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-[Arimo] text-sm text-center font-medium"
+                >
+                  ✓ {t("counterGoalAchieved")}
+                </motion.div>
+              )}
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

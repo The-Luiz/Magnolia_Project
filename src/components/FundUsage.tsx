@@ -13,6 +13,7 @@ const projects = [
     icon: Landmark,
     accent: "from-[#F89C24]/20 to-transparent",
     iconBg: "bg-[#F89C24]/10 text-[#F89C24]",
+    isFeatured: true,
   },
   {
     titleKey: "project2Title" as const,
@@ -65,6 +66,22 @@ export default function FundUsage() {
         />
       </div>
 
+      {/* Vertical decorative lines */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: [0.3, 1, 0.5, 1] }}
+          transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
+          className="absolute left-[3%] top-[10%] w-[1px] h-[80%] origin-top bg-gradient-to-b from-[#F89C24]/20 via-[#F89C24]/5 to-transparent"
+        />
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: [1, 0.4, 1, 0.6] }}
+          transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
+          className="absolute right-[3%] top-[10%] w-[1px] h-[80%] origin-bottom bg-gradient-to-t from-[#F89C24]/20 via-[#F89C24]/5 to-transparent"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -97,26 +114,25 @@ export default function FundUsage() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group relative bg-white dark:bg-[#0d1b30] rounded-2xl shadow-lg border border-[#1E3A6F]/5 dark:border-white/5 overflow-hidden hover:shadow-xl transition-all duration-500"
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" as const } }}
+              className="group relative bg-white dark:bg-[#0d1b30] rounded-2xl shadow-md hover:shadow-xl border border-[#1E3A6F]/10 dark:border-white/5 overflow-hidden transition-shadow duration-300"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('${project.image}')` }}
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.accent}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
                 <div className="absolute top-4 left-4">
                   <div className={`w-10 h-10 rounded-xl ${project.iconBg} flex items-center justify-center`}>
                     <project.icon className="h-5 w-5" />
                   </div>
                 </div>
-                {index === 0 && (
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-[#F89C24] text-white text-xs font-bold px-3 py-1 rounded-full font-[Arimo]">
-                      Proyecto Principal
-                    </span>
-                  </div>
+                {project.isFeatured && (
+                  <span className="absolute top-4 right-4 bg-[#F89C24] text-white text-xs font-bold px-3 py-1 rounded-full font-[Arimo]">
+                    {t("projectFeaturedBadge")}
+                  </span>
                 )}
               </div>
 

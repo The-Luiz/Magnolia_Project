@@ -30,6 +30,7 @@ export const translations = {
     counterUpdated: "Última actualización",
     counterDonors: "Contribuciones registradas",
     counterViewBlockchain: "Ver en Blockchain",
+    counterGoalAchieved: "¡Meta alcanzada! Gracias a todos los contribuyentes.",
 
     // Fund Usage
     fundBadge: "Dónde irán tus fondos",
@@ -45,6 +46,7 @@ export const translations = {
     project3Title: "Centro de Visitantes",
     project3Desc:
       "Un espacio arquitectónico innovador con pantallas interactivas, arte digital, y una biblioteca especializada en tecnología blockchain y economía descentralizada.",
+    projectFeaturedBadge: "Proyecto Principal",
 
     // Contribution Levels
     levelsBadge: "Niveles de Contribución",
@@ -135,6 +137,7 @@ export const translations = {
     footerAddress: "Magnolia Bitcoin Memorial",
     footerAddressDetail: "118 acres, El Salvador",
     footerEmail: "contacto@magnoliabitcoin.org",
+    footerLocationLabel: "Ubicación",
     footerRights: "Todos los derechos reservados.",
     footerDisclaimerText:
       "Las contribuciones son voluntarias y no constituyen inversión. Bitcoin es un activo volátil. Consulte asesoría profesional antes de donar.",
@@ -169,6 +172,7 @@ export const translations = {
     counterUpdated: "Last updated",
     counterDonors: "Recorded contributions",
     counterViewBlockchain: "View on Blockchain",
+    counterGoalAchieved: "Goal achieved! Thank you to all contributors.",
 
     // Fund Usage
     fundBadge: "Where your funds will go",
@@ -184,6 +188,7 @@ export const translations = {
     project3Title: "Visitor Center",
     project3Desc:
       "An innovative architectural space with interactive screens, digital art, and a specialized library on blockchain technology and decentralized economics.",
+    projectFeaturedBadge: "Main Project",
 
     // Contribution Levels
     levelsBadge: "Contribution Tiers",
@@ -274,6 +279,7 @@ export const translations = {
     footerAddress: "Magnolia Bitcoin Memorial",
     footerAddressDetail: "118 acres, El Salvador",
     footerEmail: "contact@magnoliabitcoin.org",
+    footerLocationLabel: "Location",
     footerRights: "All rights reserved.",
     footerDisclaimerText:
       "Contributions are voluntary and do not constitute an investment. Bitcoin is a volatile asset. Seek professional advice before donating.",

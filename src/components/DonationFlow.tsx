@@ -151,7 +151,7 @@ export default function DonationFlow() {
               </code>
               <Button
                 onClick={copyAddress}
-                className="w-full bg-[#0A1C3A] dark:bg-white text-white dark:text-[#0A1C3A] hover:bg-[#1E3A6F] dark:hover:bg-white/90 font-[Arimo] font-medium text-sm transition-all duration-300"
+                className="w-full bg-[#0A1C3A] dark:bg-white text-white dark:text-[#0A1C3A] hover:bg-[#1E3A6F] dark:hover:bg-white/90 font-[Arimo] font-medium text-sm transition-all duration-300 rounded-xl"
               >
                 <AnimatePresence mode="wait">
                   {copied ? (

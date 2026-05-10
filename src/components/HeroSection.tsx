@@ -20,8 +20,8 @@ function AnimatedLine({ delay, className }: { delay: number; className?: string 
         duration: 2.5,
         delay,
         repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
+        repeatType: "reverse" as const,
+        ease: "easeInOut" as const,
       }}
       className={`origin-bottom rounded-full bg-gradient-to-t from-[#F89C24] via-[#F89C24]/40 to-transparent ${className}`}
     />
@@ -36,13 +36,14 @@ function FloatingParticle({ delay, x, y, size }: { delay: number; x: string; y: 
         opacity: [0, 0.6, 0.3, 0.6, 0],
         scale: [0, 1, 0.8, 1.2, 0],
         y: [0, -30, -15, -40, -60],
+        x: [0, -10, 5, -5, 0],
       }}
       transition={{
         duration: 6,
         delay,
         repeat: Infinity,
-        repeatType: "loop",
-        ease: "easeInOut",
+        repeatType: "loop" as const,
+        ease: "easeInOut" as const,
       }}
       className="absolute rounded-full bg-[#F89C24]/30"
       style={{ left: x, top: y, width: size, height: size }}
@@ -102,19 +103,19 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: [0, 1, 0.8, 1] }}
-          transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
           className="absolute top-[30%] left-[5%] w-[15%] h-[1px] origin-left bg-gradient-to-r from-[#F89C24] to-transparent"
         />
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: [0, 1, 0.7, 1] }}
-          transition={{ duration: 3.5, delay: 1, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 3.5, delay: 1, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
           className="absolute top-[35%] left-[5%] w-[10%] h-[1px] origin-left bg-gradient-to-r from-[#1E3A6F] to-transparent"
         />
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: [0, 1, 0.85, 1] }}
-          transition={{ duration: 2.8, delay: 1.5, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 2.8, delay: 1.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
           className="absolute bottom-[30%] right-[5%] w-[15%] h-[1px] origin-right bg-gradient-to-l from-[#F89C24] to-transparent"
         />
       </div>
@@ -206,7 +207,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
         >
           <ArrowDown className="h-6 w-6 text-white/50" />
         </motion.div>

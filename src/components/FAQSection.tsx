@@ -36,12 +36,12 @@ export default function FAQSection() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
           animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" as const }}
           className="absolute top-10 right-10 w-32 h-32 rounded-full border border-[#F89C24]/10"
         />
         <motion.div
           animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" as const }}
           className="absolute bottom-10 left-10 w-24 h-24 rounded-full border border-[#1E3A6F]/10"
         />
       </div>
