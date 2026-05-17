@@ -28,7 +28,7 @@ interface BTCDalanceResponse {
 
 // Cache to avoid rate limiting
 let cache: { data: BTCDalanceResponse; timestamp: number } | null = null;
-const CACHE_TTL = 30_000; // 30 seconds
+const CACHE_TTL = 90_000; // 30 seconds
 
 export async function GET() {
   try {

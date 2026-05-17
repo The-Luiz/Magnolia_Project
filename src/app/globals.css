@@ -162,6 +162,7 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /* Selection color */
