@@ -87,10 +87,10 @@ export default function LiveCounter() {
     }).format(value);
   };
 
-  return (
+return (
     <section
       id="counter"
-      className="py-20 sm:py-28 bg-gradient-to-b from-[#0A1C3A] via-[#0d2244] to-[#F8F9FA] dark:via-[#060e1a] dark:to-[#0A1C3A] relative overflow-hidden"
+      className="py-20 sm:py-28 bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] dark:from-[#0A1C3A] dark:via-[#060e1a] dark:to-[#0A1C3A] relative overflow-hidden"
       aria-label="Live fundraising counter"
     >
       {/* Background decorations */}
@@ -153,7 +153,7 @@ export default function LiveCounter() {
             <div className="flex items-center gap-2">
               <div className={`w-2.5 h-2.5 rounded-full ${isOnline ? "bg-green-500" : "bg-red-500"} animate-pulse`} />
               <span className="text-sm text-[#1E2A3E]/60 dark:text-white/50 font-[Arimo]">
-                {isOnline ? "● Live" : "● Offline"}
+                {isOnline ? " Live" : "Offline"}
               </span>
             </div>
             <Button

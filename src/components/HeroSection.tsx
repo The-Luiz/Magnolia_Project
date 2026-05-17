@@ -191,7 +191,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             onClick={() => onNavigate("fundUsage")}
             variant="outline"
             size="lg"
-            className="border-white/30 text-white hover:bg-white/10 hover:text-white font-[Arimo] font-medium text-lg px-8 py-6 transition-all duration-300"
+            className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white font-[Arimo] font-medium text-lg px-8 py-6 transition-all duration-300"
           >
             {t("heroLearnMore")}
           </Button>

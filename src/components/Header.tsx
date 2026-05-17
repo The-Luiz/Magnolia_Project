@@ -88,7 +88,7 @@ export default function Header({ onNavigate }: HeaderProps) {
                 variant="ghost"
                 size="icon"
                 onClick={toggleLanguage}
-                className="text-white/80 hover:text-white hover:bg-white/10"
+                className="text-white/80 hover:text-white hover:bg-white/10 px-6 py-2 h-auto"
                 aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
               >
                 <Globe className="h-4 w-4" />
