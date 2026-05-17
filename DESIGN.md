@@ -16,6 +16,9 @@ colors:
   chart-1: "#F89C24"
   chart-2: "#1E3A6F"
   chart-3: "#0A1C3A"
+  accent-soft: "#C98A3A"
+  info-accent: "#7FB3FF"
+  accent-glow: "#FFD166"
 typography:
   heading:
     fontFamily: "Arimo, sans-serif"
@@ -135,6 +138,25 @@ La profundidad se construye con tres técnicas:
 Los bordes de cards se refuerzan con `border border-[color]/10` (light) o `dark:border-white/5` (dark).
 
 Patrón recurrente: una línea de gradiente decorativa en la base de las cards (1-4px, `bg-gradient-to-r from-accent via-primary-light to-transparent`) que aparece al hacer hover.
+
+## Semantic Accent Variants
+
+These tokens extend the core palette for tiered or contextual differentiation without introducing new dominant colors. They are **not** standalone surface colors — apply them only as text/icon colors, border accents, gradient endpoints, or low-opacity overlay glows.
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `accent-soft` | `#C98A3A` | Restrained warm highlights — subtle hover states, secondary badges |
+| `info-accent` | `#7FB3FF` | VIP/institutional tiers — luminous sapphire for ceremonial emphasis |
+| `accent-glow` | `#FFD166` | Premium luminous states — brighter gold for highest-tier refinement |
+
+### Contribution Levels tier mapping
+
+| Tier | Token base | Visual role |
+|------|-----------|-------------|
+| Fundador Digital | `primary-light` (#1E3A6F) | Neutral dark baseline |
+| Pionero del Sendero | `accent` (#F89C24) | Warm gold highlight (featured) |
+| VIP Inaugural | `info-accent` (#7FB3FF) | Luminous sapphire institutional |
+| Magnolia Experience | `accent` + `accent-glow` (#F89C24, #FFD166) | Premium gold refinement |
 
 ## Components
 

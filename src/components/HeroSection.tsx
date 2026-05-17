@@ -74,7 +74,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/hero-bg.png')" }}
+          style={{ backgroundImage: "url('/Parque_Imagen.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C3A]/80 via-[#0A1C3A]/60 to-[#0A1C3A]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1C3A]/50 to-transparent" />
