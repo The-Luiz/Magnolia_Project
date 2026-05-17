@@ -7,11 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "next-themes";
 
-interface HeaderProps {
-  onNavigate: (section: string) => void;
-}
-
-export default function Header({ onNavigate }: HeaderProps) {
+export default function Header() {
   const { t, locale, toggleLanguage } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -38,10 +34,7 @@ export default function Header({ onNavigate }: HeaderProps) {
     { key: "faq", label: t("navFAQ") },
   ];
 
-  const handleNav = (section: string) => {
-    onNavigate(section);
-    setMobileOpen(false);
-  };
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <motion.header
@@ -57,26 +50,25 @@ export default function Header({ onNavigate }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <button
-            onClick={() => handleNav("hero")}
+          <a href="#hero" onClick={closeMobile}
             className="flex items-center gap-2 group"
           >
             <Bitcoin className="h-7 w-7 text-[#F89C24] group-hover:rotate-12 transition-transform duration-300" />
             <span className="text-xl font-bold text-white tracking-tight font-[Arimo]">
               Magnolia
             </span>
-          </button>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1" role="navigation" aria-label="Main navigation">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.key}
-                onClick={() => handleNav(item.key)}
+                href={`#${item.key}`}
                 className="px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 font-[Arimo] font-medium"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -120,12 +112,13 @@ export default function Header({ onNavigate }: HeaderProps) {
             )}
 
             {/* Donate CTA */}
-            <Button
-              onClick={() => handleNav("donate")}
-              className="hidden sm:inline-flex bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-sm shadow-lg shadow-[#F89C24]/20"
-            >
-              {t("navDonate")}
-            </Button>
+            <a href="#donate" className="hidden sm:inline-flex">
+              <Button
+                className="bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-sm shadow-lg shadow-[#F89C24]/20"
+              >
+                {t("navDonate")}
+              </Button>
+            </a>
 
             {/* Mobile Menu Button */}
             <Button
@@ -166,23 +159,25 @@ export default function Header({ onNavigate }: HeaderProps) {
           >
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item, i) => (
-                <motion.button
+                <motion.a
                   key={item.key}
+                  href={`#${item.key}`}
+                  onClick={closeMobile}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => handleNav(item.key)}
-                  className="w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
+                  className="w-full block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
                 >
                   {item.label}
-                </motion.button>
+                </motion.a>
               ))}
-              <Button
-                onClick={() => handleNav("donate")}
-                className="w-full mt-2 bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold"
-              >
-                {t("navDonate")}
-              </Button>
+              <a href="#donate" onClick={closeMobile} className="block mt-2">
+                <Button
+                  className="w-full bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold"
+                >
+                  {t("navDonate")}
+                </Button>
+              </a>
             </div>
           </motion.nav>
         )}

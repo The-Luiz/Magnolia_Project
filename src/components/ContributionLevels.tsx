@@ -76,18 +76,10 @@ export default function ContributionLevels() {
       className="py-20 sm:py-28 bg-[#F8F9FA] dark:bg-[#060e1a] relative overflow-hidden"
       aria-label="Contribution levels"
     >
-      {/* Animated background decoration */}
+      {/* Static background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{ x: [0, 50, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-0 w-96 h-96 bg-[#F89C24]/5 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ x: [0, -40, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-0 w-80 h-80 bg-[#1E3A6F]/5 rounded-full blur-3xl"
-        />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#F89C24]/5 rounded-full blur-3xl will-change-transform" />
+        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-[#1E3A6F]/5 rounded-full blur-3xl will-change-transform" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

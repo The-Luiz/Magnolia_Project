@@ -1,40 +1,15 @@
-"use client";
-
-import { useCallback } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import LiveCounter from "@/components/LiveCounter";
-import FundUsage from "@/components/FundUsage";
-import ContributionLevels from "@/components/ContributionLevels";
-import DonationFlow from "@/components/DonationFlow";
-import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 
-function MagnoliaApp() {
-  const handleNavigate = useCallback((section: string) => {
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0A1C3A] transition-colors duration-300">
-      <Header onNavigate={handleNavigate} />
-      <main className="flex-1">
-        <HeroSection onNavigate={handleNavigate} />
-        <LiveCounter />
-        <FundUsage />
-        <ContributionLevels />
-        <DonationFlow />
-        <FAQSection />
-      </main>
-      <Footer />
-    </div>
-  );
-}
+const LiveCounter = dynamic(() => import("@/components/LiveCounter"));
+const FundUsage = dynamic(() => import("@/components/FundUsage"));
+const ContributionLevels = dynamic(() => import("@/components/ContributionLevels"));
+const DonationFlow = dynamic(() => import("@/components/DonationFlow"));
+const FAQSection = dynamic(() => import("@/components/FAQSection"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function Home() {
   return (
@@ -45,7 +20,18 @@ export default function Home() {
       disableTransitionOnChange
     >
       <LanguageProvider>
-        <MagnoliaApp />
+        <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0A1C3A] transition-colors duration-300">
+          <Header />
+          <main className="flex-1">
+            <HeroSection />
+            <LiveCounter />
+            <FundUsage />
+            <ContributionLevels />
+            <DonationFlow />
+            <FAQSection />
+          </main>
+          <Footer />
+        </div>
       </LanguageProvider>
     </ThemeProvider>
   );

@@ -6,10 +6,7 @@ import { ArrowDown, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-interface HeroSectionProps {
-  onNavigate: (section: string) => void;
-}
+import Image from "next/image";
 
 function AnimatedLine({ delay, className }: { delay: number; className?: string }) {
   return (
@@ -51,7 +48,7 @@ function FloatingParticle({ delay, x, y, size }: { delay: number; x: string; y: 
   );
 }
 
-export default function HeroSection({ onNavigate }: HeroSectionProps) {
+export default function HeroSection() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -72,10 +69,17 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
     >
       {/* Background Image */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/Parque_Imagen.jpg')" }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/Parque_Imagen.jpg"
+            alt="Magnolia Park Background"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+            quality={85}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C3A]/80 via-[#0A1C3A]/60 to-[#0A1C3A]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1C3A]/50 to-transparent" />
       </motion.div>
@@ -179,22 +183,24 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 1.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button
-            onClick={() => onNavigate("donate")}
-            size="lg"
-            className="bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-lg px-8 py-6 shadow-xl shadow-[#F89C24]/25 hover:shadow-[#F89C24]/40 transition-all duration-300 hover:scale-105"
-          >
-            <Coins className="mr-2 h-5 w-5" />
-            {t("heroCTA")}
-          </Button>
-          <Button
-            onClick={() => onNavigate("fundUsage")}
-            variant="outline"
-            size="lg"
-            className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white font-[Arimo] font-medium text-lg px-8 py-6 transition-all duration-300"
-          >
-            {t("heroLearnMore")}
-          </Button>
+          <a href="#donate">
+            <Button
+              size="lg"
+              className="bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-lg px-8 py-6 shadow-xl shadow-[#F89C24]/25 hover:shadow-[#F89C24]/40 transition-all duration-300 hover:scale-105"
+            >
+              <Coins className="mr-2 h-5 w-5" />
+              {t("heroCTA")}
+            </Button>
+          </a>
+          <a href="#fundUsage">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white font-[Arimo] font-medium text-lg px-8 py-6 transition-all duration-300"
+            >
+              {t("heroLearnMore")}
+            </Button>
+          </a>
         </motion.div>
       </motion.div>
 

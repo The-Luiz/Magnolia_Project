@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { RefreshCw, ExternalLink, Wifi, WifiOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,34 +20,17 @@ interface BTCDalance {
 }
 
 function CountUp({ target, decimals = 8, prefix = "" }: { target: number; decimals?: number; prefix?: string }) {
-  const [value, setValue] = useState(0);
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    return prefix + latest.toFixed(decimals);
+  });
 
   useEffect(() => {
-    let start = 0;
-    const duration = 2000;
-    const startTime = Date.now();
+    const animation = animate(count, target, { duration: 2, ease: "easeOut" });
+    return animation.stop;
+  }, [target, count]);
 
-    const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      start = target * eased;
-      setValue(start);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [target]);
-
-  return (
-    <span>
-      {prefix}
-      {value.toFixed(decimals)}
-    </span>
-  );
+  return <motion.span>{rounded}</motion.span>;
 }
 
 export default function LiveCounter() {
@@ -95,17 +78,9 @@ return (
     >
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Pulsing blurred orbs */}
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.03, 0.05, 0.03] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" as const }}
-          className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#F89C24] rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.02, 0.04, 0.02] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" as const }}
-          className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1E3A6F] rounded-full blur-3xl"
-        />
+        {/* Static blurred orbs (optimized for mobile) */}
+        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#F89C24] rounded-full blur-3xl opacity-5 dark:opacity-10 will-change-transform" />
+        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1E3A6F] rounded-full blur-3xl opacity-5 will-change-transform" />
         {/* Rotating rings */}
         <motion.div
           animate={{ rotate: 360 }}
