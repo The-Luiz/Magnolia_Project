@@ -36,7 +36,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img src="/logo.svg" alt="Magnolia Logo" className="h-8 mb-4" />
+
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               {t("footerAboutDesc")}
             </p>
