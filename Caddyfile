@@ -1,4 +1,7 @@
-:81 {
+https://localhost:8443, https://fedora:8443 {
+	
+	encode gzip zstd
+
 	@transform_port_query {
 		query XTransformPort=*
 	}

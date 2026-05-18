@@ -1,14 +1,96 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useMemo, useState, useEffect, memo } from "react";
+import { motion, useScroll, useTransform, useReducedMotion, useSpring } from "framer-motion";
 import { ArrowDown, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
-function AnimatedLine({ delay, className }: { delay: number; className?: string }) {
+// ============================================
+// 1. DETECTAR MÓVIL + REDUCED MOTION
+// ============================================
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  
+  return isMobile;
+}
+
+// ============================================
+// 2. PARTÍCULAS OPTIMIZADAS (memoizadas, menos en móvil)
+// ============================================
+const FloatingParticle = memo(function FloatingParticle({ 
+  delay, x, y, size, isMobile 
+}: { 
+  delay: number; x: string; y: string; size: number; isMobile: boolean 
+}) {
+  // En móvil: solo animamos opacity y scale, no x/y para evitar layout thrashing
+  const animate = isMobile 
+    ? { opacity: [0, 0.5, 0], scale: [0, 1, 0] }
+    : { 
+        opacity: [0, 0.6, 0.3, 0.6, 0], 
+        scale: [0, 1, 0.8, 1.2, 0],
+        y: [0, -30, -15, -40, -60],
+        x: [0, -10, 5, -5, 0],
+      };
+      
+  const duration = isMobile ? 4 : 6;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={animate}
+      transition={{
+        duration,
+        delay,
+        repeat: Infinity,
+        repeatType: "loop" as const,
+        ease: "easeInOut" as const,
+      }}
+      // GPU LAYER + will-change
+      style={{ 
+        left: x, 
+        top: y, 
+        width: size, 
+        height: size,
+        willChange: "transform, opacity",
+        transform: "translateZ(0)",
+      }}
+      className="absolute rounded-full bg-[#F89C24]/30"
+    />
+  );
+});
+
+// ============================================
+// 3. LÍNEAS OPTIMIZADAS (CSS en móvil, Motion en desktop)
+// ============================================
+const AnimatedLine = memo(function AnimatedLine({ 
+  delay, className, isMobile 
+}: { 
+  delay: number; className?: string; isMobile: boolean 
+}) {
+  if (isMobile) {
+    // En móvil: usar CSS animation nativa (WAAPI/GPU) en lugar de JS
+    return (
+      <div 
+        className={`origin-bottom rounded-full bg-gradient-to-t from-[#F89C24] via-[#F89C24]/40 to-transparent animate-pulse-line ${className}`}
+        style={{ 
+          animationDelay: `${delay}s`,
+          willChange: "transform",
+          transform: "translateZ(0)",
+        }}
+      />
+    );
+  }
+
   return (
     <motion.div
       initial={{ scaleY: 0 }}
@@ -21,44 +103,100 @@ function AnimatedLine({ delay, className }: { delay: number; className?: string 
         ease: "easeInOut" as const,
       }}
       className={`origin-bottom rounded-full bg-gradient-to-t from-[#F89C24] via-[#F89C24]/40 to-transparent ${className}`}
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
     />
   );
-}
+});
 
-function FloatingParticle({ delay, x, y, size }: { delay: number; x: string; y: string; size: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{
-        opacity: [0, 0.6, 0.3, 0.6, 0],
-        scale: [0, 1, 0.8, 1.2, 0],
-        y: [0, -30, -15, -40, -60],
-        x: [0, -10, 5, -5, 0],
-      }}
-      transition={{
-        duration: 6,
-        delay,
-        repeat: Infinity,
-        repeatType: "loop" as const,
-        ease: "easeInOut" as const,
-      }}
-      className="absolute rounded-full bg-[#F89C24]/30"
-      style={{ left: x, top: y, width: size, height: size }}
-    />
-  );
-}
+// ============================================
+// CSS INJECTADO PARA ANIMACIÓN LIGERA EN MÓVIL
+// ============================================
+const MOBILE_LINE_CSS = `
+  @keyframes pulseLine {
+    0%, 100% { transform: scaleY(0.3) translateZ(0); opacity: 0.4; }
+    50% { transform: scaleY(1) translateZ(0); opacity: 1; }
+  }
+  .animate-pulse-line {
+    animation: pulseLine 3s ease-in-out infinite;
+  }
+`;
 
 export default function HeroSection() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  const shouldReduceMotion = useReducedMotion(); // Respeta preferencias del SO
+
+  // ============================================
+  // 4. SCROLL PARALLAX OPTIMIZADO
+  // ============================================
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // useSpring suaviza los cálculos de scroll (menos frames perdidos)
+  const smoothProgress = useSpring(scrollYProgress, { 
+    stiffness: 100, 
+    damping: 30, 
+    restDelta: 0.001 
+  });
+
+  // En móvil o reduced-motion: desactivar parallax complejo
+  const bgY = useTransform(smoothProgress, [0, 1], ["0%", "30%"]);
+  const textY = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(smoothProgress, [0, 0.8], [1, 0]);
+
+  // Si reduced motion o móvil: valores estáticos para evitar cálculos por frame
+  const motionStyle = shouldReduceMotion || isMobile
+    ? { y: 0, opacity: 1 }
+    : { y: textY, opacity };
+
+  const bgStyle = shouldReduceMotion || isMobile
+    ? { y: 0 }
+    : { y: bgY };
+
+  // ============================================
+  // 5. REDUCIR ELEMENTOS DECORATIVOS EN MÓVIL
+  // ============================================
+  const particles = useMemo(() => {
+    if (isMobile) {
+      // Solo 3 partículas en móvil vs 7 en desktop
+      return [
+        { delay: 0, x: "10%", y: "70%", size: 6 },
+        { delay: 2, x: "75%", y: "60%", size: 8 },
+        { delay: 1, x: "90%", y: "45%", size: 4 },
+      ];
+    }
+    return [
+      { delay: 0, x: "10%", y: "70%", size: 6 },
+      { delay: 1.5, x: "25%", y: "80%", size: 4 },
+      { delay: 3, x: "75%", y: "60%", size: 8 },
+      { delay: 0.5, x: "85%", y: "75%", size: 5 },
+      { delay: 2, x: "50%", y: "85%", size: 3 },
+      { delay: 4, x: "15%", y: "50%", size: 5 },
+      { delay: 1, x: "90%", y: "45%", size: 4 },
+      { delay: 2.5, x: "60%", y: "90%", size: 6 },
+    ];
+  }, [isMobile]);
+
+  const lines = useMemo(() => {
+    if (isMobile) {
+      // Solo 2 líneas en móvil vs 6
+      return [
+        { delay: 0, className: "absolute left-[8%] bottom-0 w-[2px] h-[40%]" },
+        { delay: 0.6, className: "absolute right-[10%] bottom-0 w-[2px] h-[35%]" },
+      ];
+    }
+    return [
+      { delay: 0, className: "absolute left-[8%] bottom-0 w-[2px] h-[40%]" },
+      { delay: 0.3, className: "absolute left-[12%] bottom-0 w-[1px] h-[25%]" },
+      { delay: 0.6, className: "absolute right-[10%] bottom-0 w-[2px] h-[35%]" },
+      { delay: 0.9, className: "absolute right-[14%] bottom-0 w-[1px] h-[20%]" },
+      { delay: 1.2, className: "absolute left-[20%] bottom-0 w-[1px] h-[15%]" },
+      { delay: 1.5, className: "absolute right-[22%] bottom-0 w-[1.5px] h-[28%]" },
+    ];
+  }, [isMobile]);
 
   return (
     <section
@@ -67,65 +205,73 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background Image */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
+      {isMobile && <style dangerouslySetInnerHTML={{ __html: MOBILE_LINE_CSS }} />}
+
+      {/* Background Image - GPU layer */}
+      <motion.div 
+        className="absolute inset-0 z-0" 
+        style={{ ...bgStyle, willChange: "transform", transform: "translateZ(0)" }}
+      >
         <div className="absolute inset-0">
           <Image
-            src="/Parque_Imagen.jpg"
+            src="/Parque_Imagen.avif"
             alt="Magnolia Park Background"
             fill
             priority
             className="object-cover object-center"
             sizes="100vw"
-            quality={75}
+            quality={isMobile ? 30 : 40} // Menor calidad en móvil
+            loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C3A]/80 via-[#0A1C3A]/60 to-[#0A1C3A]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1C3A]/50 to-transparent" />
       </motion.div>
 
-      {/* Floating Particles */}
-      <FloatingParticle delay={0} x="10%" y="70%" size={6} />
-      <FloatingParticle delay={1.5} x="25%" y="80%" size={4} />
-      <FloatingParticle delay={3} x="75%" y="60%" size={8} />
-      <FloatingParticle delay={0.5} x="85%" y="75%" size={5} />
-      <FloatingParticle delay={2} x="50%" y="85%" size={3} />
-      <FloatingParticle delay={4} x="15%" y="50%" size={5} />
-      <FloatingParticle delay={1} x="90%" y="45%" size={4} />
-      <FloatingParticle delay={2.5} x="60%" y="90%" size={6} />
+      {/* Floating Particles - memoizadas y reducidas */}
+      {particles.map((p, i) => (
+        <FloatingParticle key={i} {...p} isMobile={isMobile} />
+      ))}
 
-      {/* Decorative Lines */}
+      {/* Decorative Lines - CSS nativo en móvil */}
       <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-        <AnimatedLine delay={0} className="absolute left-[8%] bottom-0 w-[2px] h-[40%]" />
-        <AnimatedLine delay={0.3} className="absolute left-[12%] bottom-0 w-[1px] h-[25%]" />
-        <AnimatedLine delay={0.6} className="absolute right-[10%] bottom-0 w-[2px] h-[35%]" />
-        <AnimatedLine delay={0.9} className="absolute right-[14%] bottom-0 w-[1px] h-[20%]" />
-        <AnimatedLine delay={1.2} className="absolute left-[20%] bottom-0 w-[1px] h-[15%]" />
-        <AnimatedLine delay={1.5} className="absolute right-[22%] bottom-0 w-[1.5px] h-[28%]" />
+        {lines.map((l, i) => (
+          <AnimatedLine key={i} {...l} isMobile={isMobile} />
+        ))}
 
-        {/* Horizontal decorative lines */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: [0, 1, 0.8, 1] }}
-          transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-          className="absolute top-[30%] left-[5%] w-[15%] h-[1px] origin-left bg-gradient-to-r from-[#F89C24] to-transparent"
-        />
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: [0, 1, 0.7, 1] }}
-          transition={{ duration: 3.5, delay: 1, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-          className="absolute top-[35%] left-[5%] w-[10%] h-[1px] origin-left bg-gradient-to-r from-[#1E3A6F] to-transparent"
-        />
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: [0, 1, 0.85, 1] }}
-          transition={{ duration: 2.8, delay: 1.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-          className="absolute bottom-[30%] right-[5%] w-[15%] h-[1px] origin-right bg-gradient-to-l from-[#F89C24] to-transparent"
-        />
+        {/* Líneas horizontales: solo en desktop */}
+        {!isMobile && (
+          <>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: [0, 1, 0.8, 1] }}
+              transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
+              className="absolute top-[30%] left-[5%] w-[15%] h-[1px] origin-left bg-gradient-to-r from-[#F89C24] to-transparent"
+              style={{ willChange: "transform", transform: "translateZ(0)" }}
+            />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: [0, 1, 0.7, 1] }}
+              transition={{ duration: 3.5, delay: 1, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
+              className="absolute top-[35%] left-[5%] w-[10%] h-[1px] origin-left bg-gradient-to-r from-[#1E3A6F] to-transparent"
+              style={{ willChange: "transform", transform: "translateZ(0)" }}
+            />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: [0, 1, 0.85, 1] }}
+              transition={{ duration: 2.8, delay: 1.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
+              className="absolute bottom-[30%] right-[5%] w-[15%] h-[1px] origin-right bg-gradient-to-l from-[#F89C24] to-transparent"
+              style={{ willChange: "transform", transform: "translateZ(0)" }}
+            />
+          </>
+        )}
       </div>
 
       {/* Content */}
-      <motion.div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ y: textY, opacity }}>
+      <motion.div 
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" 
+        style={motionStyle}
+      >
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -152,6 +298,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               className="inline-block mt-2 bg-gradient-to-r from-[#F89C24] via-[#fbbf24] to-[#F89C24] bg-clip-text text-transparent"
+              style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
             >
               {t("heroTitleHighlight")}
             </motion.span>
@@ -186,7 +333,7 @@ export default function HeroSection() {
           <a href="#donate">
             <Button
               size="lg"
-              className="bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-lg px-8 py-6 shadow-xl shadow-[#F89C24]/25 hover:shadow-[#F89C24]/40 transition-all duration-300 hover:scale-105"
+              className="bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold text-lg px-8 py-6 shadow-xl shadow-[#F89C24]/25 hover:shadow-[#F89C24]/40 transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <Coins className="mr-2 h-5 w-5" />
               {t("heroCTA")}
@@ -204,20 +351,22 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
+      {/* Scroll Indicator - ocultar en móvil si reduced motion */}
+      {!shouldReduceMotion && (
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         >
-          <ArrowDown className="h-6 w-6 text-white/50" />
+          <motion.div
+            animate={isMobile ? undefined : { y: [0, 10, 0] }} // Sin animación en móvil
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
+          >
+            <ArrowDown className="h-6 w-6 text-white/50" />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </section>
   );
 }

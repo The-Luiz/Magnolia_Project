@@ -9,7 +9,7 @@ const projects = [
   {
     titleKey: "project1Title" as const,
     descKey: "project1Desc" as const,
-    image: "/satoshi-statue.png",
+    image: "/satoshi-statue.avif",
     icon: Landmark,
     accent: "from-[#F89C24]/20 to-transparent",
     iconBg: "bg-[#F89C24]/10 text-[#F89C24]",
@@ -18,7 +18,7 @@ const projects = [
   {
     titleKey: "project2Title" as const,
     descKey: "project2Desc" as const,
-    image: "/bitcoin-trail.png",
+    image: "/bitcoin-trail.avif",
     icon: TreePine,
     accent: "from-[#1E3A6F]/20 to-transparent",
     iconBg: "bg-[#1E3A6F]/10 text-[#1E3A6F] dark:text-blue-300",
@@ -26,7 +26,7 @@ const projects = [
   {
     titleKey: "project3Title" as const,
     descKey: "project3Desc" as const,
-    image: "/bitcoin-trail.png",
+    image: "/bitcoin-trail.avif",
     icon: Building2,
     accent: "from-emerald-500/20 to-transparent",
     iconBg: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
@@ -67,7 +67,7 @@ export default function FundUsage() {
       </div>
 
       {/* Vertical decorative lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 hidden md:block">
         <motion.div
           initial={{ scaleY: 0 }}
           animate={{ scaleY: [0.3, 1, 0.5, 1] }}

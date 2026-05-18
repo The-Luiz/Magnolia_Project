@@ -76,16 +76,8 @@ export default function DonationFlow() {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.03, 0.06, 0.03] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F89C24] rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.03, 0.05, 0.03] }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#1E3A6F] rounded-full blur-[100px]"
-        />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F89C24] rounded-full blur-[120px] opacity-[0.04] md:animate-pulse" style={{ animationDuration: "8s" }} />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#1E3A6F] rounded-full blur-[100px] opacity-[0.04] md:animate-pulse" style={{ animationDuration: "10s" }} />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

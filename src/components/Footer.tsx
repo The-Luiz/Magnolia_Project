@@ -103,7 +103,7 @@ export default function Footer() {
           <p className="text-white/40 text-xs text-center sm:text-left">
             © {currentYear} Magnolia Bitcoin Memorial. {t("footerRights")}
           </p>
-          <p className="text-white/30 text-xs text-center sm:text-right max-w-md">
+          <p className="text-white/60 text-xs text-center sm:text-right max-w-md">
             {t("footerDisclaimerText")}
           </p>
         </div>
