@@ -108,19 +108,6 @@ const AnimatedLine = memo(function AnimatedLine({
   );
 });
 
-// ============================================
-// CSS INJECTADO PARA ANIMACIÓN LIGERA EN MÓVIL
-// ============================================
-const MOBILE_LINE_CSS = `
-  @keyframes pulseLine {
-    0%, 100% { transform: scaleY(0.3) translateZ(0); opacity: 0.4; }
-    50% { transform: scaleY(1) translateZ(0); opacity: 1; }
-  }
-  .animate-pulse-line {
-    animation: pulseLine 3s ease-in-out infinite;
-  }
-`;
-
 export default function HeroSection() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -205,8 +192,6 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {isMobile && <style dangerouslySetInnerHTML={{ __html: MOBILE_LINE_CSS }} />}
-
       {/* Background Image - GPU layer */}
       <motion.div 
         className="absolute inset-0 z-0" 

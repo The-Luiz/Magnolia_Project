@@ -153,3 +153,12 @@ html {
   background-color: #F89C24;
   color: white;
 }
+
+/* Mobile line pulse animation for HeroSection */
+@keyframes pulseLine {
+  0%, 100% { transform: scaleY(0.3) translateZ(0); opacity: 0.4; }
+  50% { transform: scaleY(1) translateZ(0); opacity: 1; }
+}
+.animate-pulse-line {
+  animation: pulseLine 3s ease-in-out infinite;
+}

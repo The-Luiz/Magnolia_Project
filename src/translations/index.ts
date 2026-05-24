@@ -7,6 +7,7 @@ export const translations = {
     navCounter: "Contador en Vivo",
     navDonate: "Donar",
     navFAQ: "FAQ",
+    navTrail: "Sendero Bitcoin",
 
     // Hero
     heroBadge: " Honrando a Satoshi Nakamoto",
@@ -141,6 +142,23 @@ export const translations = {
     footerRights: "Todos los derechos reservados.",
     footerDisclaimerText:
       "Las contribuciones son voluntarias y no constituyen inversión. Bitcoin es un activo volátil. Consulte asesoría profesional antes de donar.",
+
+    // Trail
+    trailBack: "Volver al inicio",
+    trailBackIndex: "Volver al índice",
+    trailFilterTitle: "Filtros",
+    trailFilterAll: "Todas",
+    trailFilterFundamentos: "Fundamentos",
+    trailFilterHistoria: "Historia",
+    trailFilterTecnología: "Tecnología",
+    trailFilterFilosofía: "Filosofía",
+    trailFilterEconomía: "Economía",
+    trailSearchPlaceholder: "Buscar estación",
+    trailCategoryTitle: "Categoría",
+    trailNoResults: "Sin resultados",
+    trailPrev: "Anterior",
+    trailNext: "Siguiente",
+    trailStationLabel: "Estación",
   },
 
   en: {
@@ -149,6 +167,7 @@ export const translations = {
     navCounter: "Live Counter",
     navDonate: "Donate",
     navFAQ: "FAQ",
+    navTrail: "Bitcoin Trail",
 
     // Hero
     heroBadge: " Honoring Satoshi Nakamoto",
@@ -283,6 +302,23 @@ export const translations = {
     footerRights: "All rights reserved.",
     footerDisclaimerText:
       "Contributions are voluntary and do not constitute an investment. Bitcoin is a volatile asset. Seek professional advice before donating.",
+
+    // Trail
+    trailBack: "Back to home",
+    trailBackIndex: "Back to index",
+    trailFilterTitle: "Filters",
+    trailFilterAll: "All",
+    trailFilterFundamentos: "Fundamentals",
+    trailFilterHistoria: "History",
+    trailFilterTecnología: "Technology",
+    trailFilterFilosofía: "Philosophy",
+    trailFilterEconomía: "Economics",
+    trailSearchPlaceholder: "Search station",
+    trailCategoryTitle: "Category",
+    trailNoResults: "No results",
+    trailPrev: "Previous",
+    trailNext: "Next",
+    trailStationLabel: "Station",
   },
 } as const;
 

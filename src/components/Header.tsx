@@ -3,9 +3,10 @@
 import { useState, useEffect, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Globe, Bitcoin } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Header() {
   const { t, locale, toggleLanguage } = useLanguage();
@@ -70,6 +71,12 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/trail"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 font-[Arimo] font-medium"
+            >
+              {t("navTrail")}
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -171,6 +178,9 @@ export default function Header() {
                   {item.label}
                 </motion.a>
               ))}
+              <Link href="/trail" onClick={closeMobile} className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium">
+                {t("navTrail")}
+              </Link>
               <a href="#donate" onClick={closeMobile} className="block mt-2">
                 <Button
                   className="w-full bg-[#F89C24] text-white hover:bg-[#e08b1a] font-[Arimo] font-bold"
