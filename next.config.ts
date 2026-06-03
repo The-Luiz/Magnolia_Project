@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // Añadimos el soporte para las calidades optimizadas de tus imágenes
+  images: {
+    qualities: [30, 40, 75],
+  },
 };
 
 export default nextConfig;
