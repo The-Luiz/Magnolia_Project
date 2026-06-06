@@ -4,12 +4,11 @@ import { useRef, useMemo, useState, useEffect, memo } from "react";
 import { motion, useScroll, useTransform, useReducedMotion, useSpring } from "framer-motion";
 import { ArrowDown, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
 // ============================================
-// 1. DETECTAR MÓVIL + REDUCED MOTION
+// 3. LÍNEAS OPTIMIZADAS (CSS en móvil, Motion en desktop)
 // ============================================
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
@@ -223,33 +222,6 @@ export default function HeroSection() {
         {lines.map((l, i) => (
           <AnimatedLine key={i} {...l} isMobile={isMobile} />
         ))}
-
-        {/* Líneas horizontales: solo en desktop */}
-        {!isMobile && (
-          <>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: [0, 1, 0.8, 1] }}
-              transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-              className="absolute top-[30%] left-[5%] w-[15%] h-[1px] origin-left bg-gradient-to-r from-[#F89C24] to-transparent"
-              style={{ willChange: "transform", transform: "translateZ(0)" }}
-            />
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: [0, 1, 0.7, 1] }}
-              transition={{ duration: 3.5, delay: 1, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-              className="absolute top-[35%] left-[5%] w-[10%] h-[1px] origin-left bg-gradient-to-r from-[#1E3A6F] to-transparent"
-              style={{ willChange: "transform", transform: "translateZ(0)" }}
-            />
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: [0, 1, 0.85, 1] }}
-              transition={{ duration: 2.8, delay: 1.5, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const }}
-              className="absolute bottom-[30%] right-[5%] w-[15%] h-[1px] origin-right bg-gradient-to-l from-[#F89C24] to-transparent"
-              style={{ willChange: "transform", transform: "translateZ(0)" }}
-            />
-          </>
-        )}
       </div>
 
       {/* Content */}
@@ -257,18 +229,6 @@ export default function HeroSection() {
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" 
         style={motionStyle}
       >
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <Badge className="bg-[#F89C24]/15 text-[#F89C24] border-[#F89C24]/30 px-4 py-2 text-sm font-[Arimo] font-bold mb-8 inline-flex items-center gap-2">
-            <Coins className="h-4 w-4" />
-            {t("heroBadge")}
-          </Badge>
-        </motion.div>
-
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

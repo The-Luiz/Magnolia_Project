@@ -2,9 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { RefreshCw, ExternalLink, Wifi, WifiOff } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -38,7 +36,6 @@ export default function LiveCounter() {
   const [data, setData] = useState<BTCDalance | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-  const [isOnline, setIsOnline] = useState(true);
 
   const fetchBalance = useCallback(async () => {
     try {
@@ -47,9 +44,8 @@ export default function LiveCounter() {
       const json = await res.json();
       setData(json);
       setLastUpdated(new Date());
-      setIsOnline(true);
     } catch {
-      setIsOnline(false);
+      // silently fail, keep previous data
     } finally {
       setLoading(false);
     }
@@ -70,172 +66,132 @@ export default function LiveCounter() {
     }).format(value);
   };
 
-return (
+  return (
     <section
       id="counter"
-      className="py-20 sm:py-28 bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] dark:from-[#0A1C3A] dark:via-[#060e1a] dark:to-[#0A1C3A] relative overflow-hidden"
+      className="py-20 sm:py-28 relative"
       aria-label="Live fundraising counter"
     >
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Static blurred orbs (optimized for mobile) */}
-        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-[#F89C24] rounded-full blur-3xl opacity-5 dark:opacity-10 will-change-transform" />
-        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#1E3A6F] rounded-full blur-3xl opacity-5 will-change-transform" />
-        {/* Rotating rings */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" as const }}
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-[#F89C24]/10"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear" as const }}
-          className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full border border-[#1E3A6F]/20"
-        />
-      </div>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <Badge className="bg-[#1E3A6F]/20 text-[#1E3A6F] dark:text-blue-300 border-[#1E3A6F]/30 mb-4 inline-flex items-center gap-2 px-4 py-1.5">
-            <Wifi className="h-3.5 w-3.5" />
-            {t("counterBadge")}
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0A1C3A] dark:text-white font-[Arimo] mb-4">
+          <p className="text-xs tracking-[0.2em] text-muted-foreground font-[Arimo] mb-4">
+            {t("counterBadge").toUpperCase()}
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[Arimo] mb-4">
             {t("counterTitle")}
           </h2>
-          <p className="text-[#1E2A3E]/70 dark:text-white/60 max-w-2xl mx-auto font-[Arimo]">
+          <p className="text-muted-foreground max-w-xl mx-auto font-[Arimo] text-sm leading-relaxed">
             {t("counterSubtitle")}
           </p>
         </motion.div>
 
-        {/* Counter Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="bg-white dark:bg-[#0d1b30] rounded-2xl shadow-2xl border border-[#1E3A6F]/10 dark:border-white/5 p-6 sm:p-10"
-        >
-          {/* Status bar */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2">
-              <div className={`w-2.5 h-2.5 rounded-full ${isOnline ? "bg-green-500" : "bg-red-500"} animate-pulse`} />
-              <span className="text-sm text-[#1E2A3E]/60 dark:text-white/50 font-[Arimo]">
-                {isOnline ? " Live" : "Offline"}
-              </span>
-            </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={fetchBalance}
-              disabled={loading}
-              className="text-[#1E3A6F] dark:text-white/70 hover:bg-[#1E3A6F]/10"
-            >
-              <RefreshCw className={`h-4 w-4 mr-1 ${loading ? "animate-spin" : ""}`} />
-              Refresh
-            </Button>
+        {/* Loading */}
+        {loading && !data ? (
+          <div className="text-center py-12">
+            <div className="inline-block w-8 h-8 border-2 border-[#F89C24]/20 border-t-[#F89C24] rounded-full animate-spin" />
           </div>
-
-          {/* Main Balance */}
-          {loading && !data ? (
-            <div className="text-center py-12">
-              <div className="inline-block w-12 h-12 border-4 border-[#F89C24]/20 border-t-[#F89C24] rounded-full animate-spin" />
-              <p className="mt-4 text-[#1E2A3E]/60 dark:text-white/50 font-[Arimo]">
-                {t("counterUpdated")}...
+        ) : data ? (
+          <>
+            {/* Main Balance */}
+            <div className="text-center mb-12">
+              <p className="text-xs tracking-[0.15em] text-muted-foreground font-[Arimo] mb-4">
+                {t("counterRaised").toUpperCase()}
+              </p>
+              <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground font-[Arimo] mb-3 tracking-tight">
+                <CountUp target={data.balance_btc} decimals={8} />
+                <span className="text-2xl sm:text-3xl text-accent ml-3">BTC</span>
+              </div>
+              <p className="text-xl sm:text-2xl text-muted-foreground font-[Arimo]">
+                ≈ {formatUSD(data.usd_approximate)}
               </p>
             </div>
-          ) : data ? (
-            <>
-              <div className="text-center mb-8">
-                <p className="text-sm text-[#1E2A3E]/60 dark:text-white/50 mb-2 font-[Arimo] uppercase tracking-wider">
-                  {t("counterRaised")}
+
+            {/* Progress bar — hairline editorial */}
+            <div className="mb-10">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs text-muted-foreground font-[Arimo]">
+                  {t("counterOf")} {formatUSD(data.goal_usd)}
+                </span>
+                <span className="text-xs font-bold text-accent font-[Arimo] tabular-nums">
+                  {data.progress_percent.toFixed(1)}%
+                </span>
+              </div>
+              <Progress
+                value={data.progress_percent}
+                className="h-1 rounded-none bg-border [&>div]:bg-accent [&>div]:rounded-none"
+              />
+            </div>
+
+            {/* Goal achieved */}
+            {data.progress_percent >= 100 && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="mb-10 text-center"
+              >
+                <span className="text-sm text-[#10B981] font-[Arimo] font-medium">
+                  {t("counterGoalAchieved")}
+                </span>
+              </motion.div>
+            )}
+
+            {/* Stats — no cards, pure typography */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
+              <div className="text-center">
+                <p className="text-[10px] tracking-[0.15em] text-muted-foreground font-[Arimo] mb-1">
+                  {t("counterBTC").toUpperCase()}
                 </p>
-                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0A1C3A] dark:text-white font-[Arimo] mb-2">
-                  <CountUp target={data.balance_btc} decimals={8} />
-                  <span className="text-2xl sm:text-3xl text-[#F89C24] ml-2">BTC</span>
-                </div>
-                <p className="text-2xl sm:text-3xl font-bold text-[#1E3A6F] dark:text-[#F89C24] font-[Arimo]">
-                  ≈ {formatUSD(data.usd_approximate)}
+                <p className="text-sm font-bold text-foreground font-mono tabular-nums">
+                  {data.balance_btc.toFixed(8)}
                 </p>
               </div>
-
-              {/* Progress bar */}
-              <div className="mb-8">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-sm text-[#1E2A3E]/70 dark:text-white/60 font-[Arimo]">
-                    {t("counterOf")} {formatUSD(data.goal_usd)}
-                  </span>
-                  <span className="text-sm font-bold text-[#F89C24] font-[Arimo]">
-                    {data.progress_percent.toFixed(1)}%
-                  </span>
-                </div>
-                <Progress
-                  value={data.progress_percent}
-                  className="h-4 rounded-full bg-[#1E3A6F]/10 dark:bg-white/5 [&>div]:bg-gradient-to-r [&>div]:from-[#F89C24] [&>div]:to-[#fbbf24] [&>div]:rounded-full"
-                />
+              <div className="text-center">
+                <p className="text-[10px] tracking-[0.15em] text-muted-foreground font-[Arimo] mb-1">
+                  {t("counterUSD").toUpperCase()}
+                </p>
+                <p className="text-sm font-bold text-foreground font-[Arimo] tabular-nums">
+                  {formatUSD(data.usd_approximate)}
+                </p>
               </div>
-
-              {/* Goal achieved alert */}
-              {data.progress_percent >= 100 && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-[Arimo] text-sm text-center font-medium"
-                >
-                  ✓ {t("counterGoalAchieved")}
-                </motion.div>
-              )}
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="bg-[#F8F9FA] dark:bg-white/5 rounded-xl p-4 text-center">
-                  <p className="text-xs text-[#1E2A3E]/50 dark:text-white/40 font-[Arimo] mb-1">{t("counterBTC")}</p>
-                  <p className="text-lg font-bold text-[#0A1C3A] dark:text-white font-[Arimo]">
-                    {data.balance_btc.toFixed(8)}
-                  </p>
-                </div>
-                <div className="bg-[#F8F9FA] dark:bg-white/5 rounded-xl p-4 text-center">
-                  <p className="text-xs text-[#1E2A3E]/50 dark:text-white/40 font-[Arimo] mb-1">{t("counterUSD")}</p>
-                  <p className="text-lg font-bold text-[#0A1C3A] dark:text-white font-[Arimo]">
-                    {formatUSD(data.usd_approximate)}
-                  </p>
-                </div>
-                <div className="bg-[#F8F9FA] dark:bg-white/5 rounded-xl p-4 text-center">
-                  <p className="text-xs text-[#1E2A3E]/50 dark:text-white/40 font-[Arimo] mb-1">{t("counterDonors")}</p>
-                  <p className="text-lg font-bold text-[#0A1C3A] dark:text-white font-[Arimo]">{data.tx_count}</p>
-                </div>
-                <div className="bg-[#F8F9FA] dark:bg-white/5 rounded-xl p-4 text-center">
-                  <p className="text-xs text-[#1E2A3E]/50 dark:text-white/40 font-[Arimo] mb-1">{t("counterUpdated")}</p>
-                  <p className="text-sm font-bold text-[#0A1C3A] dark:text-white font-[Arimo]">
-                    {lastUpdated?.toLocaleTimeString() || "--:--"}
-                  </p>
-                </div>
+              <div className="text-center">
+                <p className="text-[10px] tracking-[0.15em] text-muted-foreground font-[Arimo] mb-1">
+                  {t("counterDonors").toUpperCase()}
+                </p>
+                <p className="text-sm font-bold text-foreground font-[Arimo] tabular-nums">
+                  {data.tx_count}
+                </p>
               </div>
-            </>
-          ) : null}
+              <div className="text-center">
+                <p className="text-[10px] tracking-[0.15em] text-muted-foreground font-[Arimo] mb-1">
+                  {t("counterUpdated").toUpperCase()}
+                </p>
+                <p className="text-sm font-bold text-foreground font-[Arimo] tabular-nums">
+                  {lastUpdated?.toLocaleTimeString() || "--:--"}
+                </p>
+              </div>
+            </div>
 
-          {/* Blockchain Link */}
-          {data && (
-            <div className="mt-8 text-center">
+            {/* Blockchain Link */}
+            <div className="text-center">
               <a
                 href={`https://mempool.space/address/${data.address}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#1E3A6F] dark:text-[#F89C24] hover:underline font-[Arimo] font-medium text-sm transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-accent font-[Arimo] transition-colors"
               >
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLink className="h-3.5 w-3.5" />
                 {t("counterViewBlockchain")}
               </a>
             </div>
-          )}
-        </motion.div>
+          </>
+        ) : null}
       </div>
     </section>
   );
