@@ -22,10 +22,7 @@ export default function StationHeader() {
     setMounted(true);
   }, []);
 
-  const backHref = isIndex ? "/" : "/trail";
-  const backLabel = isIndex
-    ? locale === "es" ? "Inicio" : "Home"
-    : locale === "es" ? "Índice" : "Index";
+  const backLabel = locale === "es" ? "Índice" : "Index";
 
   return (
     <motion.header
@@ -36,16 +33,18 @@ export default function StationHeader() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Left: Back button + Logo */}
+          {/* Left: Back button (hidden on index) + Logo */}
           <div className="flex items-center gap-3">
-            <Link
-              href={backHref}
-              className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-[Arimo] font-medium"
-              aria-label={backLabel}
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">{backLabel}</span>
-            </Link>
+            {!isIndex && (
+              <Link
+                href="/trail"
+                className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-[Arimo] font-medium"
+                aria-label={backLabel}
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span className="hidden sm:inline">{backLabel}</span>
+              </Link>
+            )}
 
             <Link href="/" className="flex items-center gap-2 group">
               <Bitcoin className="h-6 w-6 text-[#F89C24] group-hover:rotate-12 transition-transform duration-300" />
@@ -152,14 +151,16 @@ export default function StationHeader() {
             className="sm:hidden bg-[#0A1C3A]/95 backdrop-blur-md overflow-hidden border-t border-white/10"
           >
             <div className="px-4 py-4 space-y-2">
-              <Link
-                href={backHref}
-                onClick={() => setMobileOpen(false)}
-                className="w-full flex items-center gap-2 px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                {backLabel}
-              </Link>
+              {!isIndex && (
+                <Link
+                  href="/trail"
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full flex items-center gap-2 px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  {backLabel}
+                </Link>
+              )}
               <Link
                 href="/"
                 onClick={() => setMobileOpen(false)}
