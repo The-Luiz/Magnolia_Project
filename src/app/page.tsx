@@ -13,7 +13,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 export default function Home() {
   return (
     <LanguageProvider>
-        <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#0A1C3A] transition-colors duration-300">
+        <div className="min-h-screen flex flex-col transition-colors duration-300">
           <Header />
           <main className="flex-1">
             <HeroSection />
