@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Guía para agentes de IA con comandos de runtime (Bun, no Node), arquitectura Next.js 16 App Router + Prisma + SQLite + Caddy, convenciones de estilo y ESLint, y estructura de directorios del proyecto Magnolia Web.",
+      "tags": ["documentacion", "guia-agentes", "comandos", "arquitectura", "convenciones"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:DESIGN.md",
+      "type": "document",
+      "name": "DESIGN.md",
+      "filePath": "DESIGN.md",
+      "summary": "Sistema de diseño completo de Magnolia: paleta de colores azul profundo y dorado, tipografía Arimo, layout max-w-6xl, elevación y sombras, formas y radios, decoraciones animadas por sección, variantes semánticas de acento, y guías de uso con DOs y DON'Ts.",
+      "tags": ["documentacion", "diseno", "sistema-diseno", "colores", "tipografia", "componentes", "animaciones"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:components.json",
+      "type": "config",
+      "name": "components.json",
+      "filePath": "components.json",
+      "summary": "Configuración de shadcn/ui con estilo new-york, RSC habilitado, base de color neutral, variables CSS, alias de imports (@/components, @/lib/utils, @/components/ui, @/lib, @/hooks) e iconos Lucide.",
+      "tags": ["config", "shadcn", "ui", "tailwind"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Dependencias del proyecto: Next.js 16, React 19, Prisma 6, Radix UI, Framer Motion, Tailwind CSS v4, TanStack Query, Zustand, Zod, next-auth, next-themes, qrcode, recharts, y herramientas de desarrollo como TypeScript 5, ESLint 9 y Bun.",
+      "tags": ["config", "dependencias", "scripts", "nextjs", "prisma", "react"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:session-ses_1c1d.md",
+      "type": "document",
+      "name": "session-ses_1c1d.md",
+      "filePath": "session-ses_1c1d.md",
+      "summary": "Historial de sesión de IA (DeepSeek V4) que documenta la creación de plantillas TSX para estaciones del 'Magnolia Bitcoin Trail', incluyendo especificaciones de diseño, estructura de datos Station, índice con filtros, header con selector de idioma y modo oscuro, y 10 estaciones bilingües (ES/EN).",
+      "tags": ["documentacion", "session-ia", "bitcoin-trail", "plantillas", "estaciones", "i18n"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Configuración de TypeScript con target ES2017, JSX react-jsx, moduleResolution bundler, strict mode, paths alias @/* → ./src/*, y exclusión de node_modules.",
+      "tags": ["config", "typescript", "compilador"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:worklog.md",
+      "type": "document",
+      "name": "worklog.md",
+      "filePath": "worklog.md",
+      "summary": "Registro de trabajo del agente principal: construcción de landing page de 8 secciones para Magnolia Bitcoin Memorial con i18n ES/EN, modo oscuro, API de balance BTC en tiempo real, generación de QR, animaciones Framer Motion y cumplimiento WCAG AA.",
+      "tags": ["documentacion", "worklog", "landing-page", "bitcoin-memorial", "i18n", "accesibilidad"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:AGENTS.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "AGENTS.md documenta los comandos de dev/build/start/db definidos en package.json"
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "config:tsconfig.json",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "AGENTS.md documenta las convenciones de TypeScript configuradas en tsconfig.json"
+    },
+    {
+      "source": "document:DESIGN.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "DESIGN.md referencia dependencias del diseño como framer-motion, next-themes, lucide-react"
+    },
+    {
+      "source": "document:session-ses_1c1d.md",
+      "target": "document:AGENTS.md",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "La sesión de IA referencia AGENTS.md como contexto del proyecto"
+    },
+    {
+      "source": "document:session-ses_1c1d.md",
+      "target": "document:DESIGN.md",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "La sesión de IA referencia DESIGN.md como contexto del sistema de diseño"
+    },
+    {
+      "source": "document:worklog.md",
+      "target": "document:DESIGN.md",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "Worklog documenta la implementación de los componentes de diseño definidos en DESIGN.md"
+    },
+    {
+      "source": "config:package.json",
+      "target": "config:components.json",
+      "type": "configures",
+      "weight": 0.6,
+      "description": "package.json incluye dependencias shadcn/ui que components.json configura"
+    },
+    {
+      "source": "config:package.json",
+      "target": "config:tsconfig.json",
+      "type": "configures",
+      "weight": 0.6,
+      "description": "package.json incluye TypeScript como dependencia, tsconfig.json configura el compilador"
+    }
+  ]
+}

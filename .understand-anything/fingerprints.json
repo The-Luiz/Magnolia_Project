@@ -1,0 +1,5897 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "a0ff3eb3eb8fcbf1dd0caab6e676d6e4f952456a",
+  "generatedAt": "2026-06-13T21:40:12.013Z",
+  "files": {
+    ".opencode/opencode.json": {
+      "filePath": ".opencode/opencode.json",
+      "contentHash": "3f49ab9f6b0ef02bc2d0f875ccfee2d7f34f87720f602130211d28b47fa073ec",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "73812d3c6586f1b33830580aecfd9e26a988c1e1341d347aeb56182354d2316f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": false
+    },
+    ".zscripts/build.sh": {
+      "filePath": ".zscripts/build.sh",
+      "contentHash": "46502ad360b645b2e609b285302419fd021236a47297958bf36c5bc38c4d75b8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 123,
+      "hasStructuralAnalysis": true
+    },
+    ".zscripts/dev.pid": {
+      "filePath": ".zscripts/dev.pid",
+      "contentHash": "9df24862b9970e96cfb02c523f9f3ef7eb2e265cc2c9e47e1d9ad059dcc41461",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    ".zscripts/dev.sh": {
+      "filePath": ".zscripts/dev.sh",
+      "contentHash": "00877abea9e13ed7eb181b9749bb1837719ed054cfcd5ea07f9bad7c82548d34",
+      "functions": [
+        {
+          "name": "log_step_start",
+          "params": [],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "log_step_end",
+          "params": [],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "start_mini_services",
+          "params": [],
+          "exported": false,
+          "lineCount": 51
+        },
+        {
+          "name": "wait_for_service",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "cleanup",
+          "params": [],
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 155,
+      "hasStructuralAnalysis": true
+    },
+    ".zscripts/mini-services-build.sh": {
+      "filePath": ".zscripts/mini-services-build.sh",
+      "contentHash": "c29b8708832fe74eb6bc43c504bd93412177267862d767e0a0981d2cec13c608",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "exported": false,
+          "lineCount": 69
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    ".zscripts/mini-services-install.sh": {
+      "filePath": ".zscripts/mini-services-install.sh",
+      "contentHash": "c4d0ac5a9101e170cf8519de8f629cdf8ca6385ebde24a84681f42ce4794ad7e",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "exported": false,
+          "lineCount": 57
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 66,
+      "hasStructuralAnalysis": true
+    },
+    ".zscripts/mini-services-start.sh": {
+      "filePath": ".zscripts/mini-services-start.sh",
+      "contentHash": "14d922bdc4b1fba7db13eeaa260957f76cb4fdbe9a249d51a4ae6d2934ae6c98",
+      "functions": [
+        {
+          "name": "cleanup",
+          "params": [],
+          "exported": false,
+          "lineCount": 33
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": false,
+          "lineCount": 77
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 124,
+      "hasStructuralAnalysis": true
+    },
+    ".zscripts/start.sh": {
+      "filePath": ".zscripts/start.sh",
+      "contentHash": "c93760995fd7db5dbced6042393ee576607c4a15e9fec78e57d3afc41a206a30",
+      "functions": [
+        {
+          "name": "cleanup",
+          "params": [],
+          "exported": false,
+          "lineCount": 34
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 136,
+      "hasStructuralAnalysis": true
+    },
+    "AGENTS.md": {
+      "filePath": "AGENTS.md",
+      "contentHash": "d9546c3942d3b3b42944a15ab62367cf8bd38651a0b69b982f4d8e4d702785ba",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "Caddyfile": {
+      "filePath": "Caddyfile",
+      "contentHash": "76c2d35e6eb5d7aef620e47ccbcac06b1af15064ec028746be1511f80d2616d5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": false
+    },
+    "components.json": {
+      "filePath": "components.json",
+      "contentHash": "b8be06c49cf44d97a973a6f7ad38a6bc78ab04f78a2614d407738de9aa900983",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "db/custom.db": {
+      "filePath": "db/custom.db",
+      "contentHash": "c1505fd8c605d7316c26266b37d4593362579b7443b1806c574c2566bdff4ada",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": false
+    },
+    "DESIGN.md": {
+      "filePath": "DESIGN.md",
+      "contentHash": "7db948a5896849fb14050431a90a7d078257255c1746ab0b35e8823ac1ddaae3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 213,
+      "hasStructuralAnalysis": true
+    },
+    "download/README.md": {
+      "filePath": "download/README.md",
+      "contentHash": "0a345f2f749266ca2d137ab27249a8480f89a9bcb33ad51fe3afb149c81a7acc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "eslint.config.mjs": {
+      "filePath": "eslint.config.mjs",
+      "contentHash": "bd7adc9b35e2c723198ad87eb8166f3eae98517456773bf660343c04616a0f26",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "eslint-config-next/core-web-vitals",
+          "specifiers": [
+            "nextCoreWebVitals"
+          ]
+        },
+        {
+          "source": "eslint-config-next/typescript",
+          "specifiers": [
+            "nextTypescript"
+          ]
+        },
+        {
+          "source": "path",
+          "specifiers": [
+            "dirname"
+          ]
+        },
+        {
+          "source": "url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "examples/websocket/frontend.tsx": {
+      "filePath": "examples/websocket/frontend.tsx",
+      "contentHash": "2b186756c26cc54f57e07e6cee9797e99196b1e5e77744bb6e63538f9eaf89ea",
+      "functions": [
+        {
+          "name": "SocketDemo",
+          "params": [],
+          "exported": true,
+          "lineCount": 174
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "socket.io-client",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/input",
+          "specifiers": [
+            "Input"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/scroll-area",
+          "specifiers": [
+            "ScrollArea"
+          ]
+        }
+      ],
+      "exports": [
+        "SocketDemo"
+      ],
+      "totalLines": 197,
+      "hasStructuralAnalysis": true
+    },
+    "examples/websocket/server.ts": {
+      "filePath": "examples/websocket/server.ts",
+      "contentHash": "50881b769ec938afe8fc3e33aea31788e54e2ef6d5615ef1c5c33c6eb3f4c73a",
+      "functions": [
+        {
+          "name": "generateMessageId",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "createSystemMessage",
+          "params": [
+            "content"
+          ],
+          "returnType": "Message",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "createUserMessage",
+          "params": [
+            "username",
+            "content"
+          ],
+          "returnType": "Message",
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "http",
+          "specifiers": [
+            "createServer"
+          ]
+        },
+        {
+          "source": "socket.io",
+          "specifiers": [
+            "Server"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    "mini-services/.gitkeep": {
+      "filePath": "mini-services/.gitkeep",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "next.config.ts": {
+      "filePath": "next.config.ts",
+      "contentHash": "2d2faf6600a474cfe8869ede232bd39971dbd163bf39f9883df9308999803ab8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "NextConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "79eda8db497ba619052d2e5510a865377ca8b920b9cb1c7b7cdb18b18f2b080d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": true
+    },
+    "postcss.config.mjs": {
+      "filePath": "postcss.config.mjs",
+      "contentHash": "141ef24ca27a99d08962210fdf20212d3435fdcfa21b46cd88b44d22f751dfae",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "prisma/schema.prisma": {
+      "filePath": "prisma/schema.prisma",
+      "contentHash": "322dc78c4d890abc89497e75e095c627eda8fefcdf130e992b8a5cbbcd5d99fe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": false
+    },
+    "public/bitcoin-trail.avif": {
+      "filePath": "public/bitcoin-trail.avif",
+      "contentHash": "4a2a3e5585f26d0dca0b107ddc9e466669578fca1502df5d7c14b18709b37d4a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 322,
+      "hasStructuralAnalysis": false
+    },
+    "public/Parque_Imagen.avif": {
+      "filePath": "public/Parque_Imagen.avif",
+      "contentHash": "f64bf999fe2490916ca659a6ab7174322af0e6b6c3181f43578de9b44e0a24e3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2227,
+      "hasStructuralAnalysis": false
+    },
+    "public/robots.txt": {
+      "filePath": "public/robots.txt",
+      "contentHash": "a3d27b3ca5ce32341fa9f96f01169b521b1657c05d1860c45d1e53a6258e9e8b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": false
+    },
+    "public/satoshi-statue.avif": {
+      "filePath": "public/satoshi-statue.avif",
+      "contentHash": "0f4b317c9cc6a4453a35a7ce790c6120951b51d11c56ac1f0162707ce6d9fdc9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 136,
+      "hasStructuralAnalysis": false
+    },
+    "public/trail/.gitkeep": {
+      "filePath": "public/trail/.gitkeep",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "session-ses_1c1d.md": {
+      "filePath": "session-ses_1c1d.md",
+      "contentHash": "0533845b729a070c2ef93f09e06b136f0e70a5f79a0f48575bf3edad3eb9400d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9053,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/btc-balance/route.ts": {
+      "filePath": "src/app/api/btc-balance/route.ts",
+      "contentHash": "ebc92f23da1b87efb0f67c42c4b9dfaeb9d10dcd577d6a5ccf737f13f599b59a",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [],
+          "exported": true,
+          "lineCount": 82
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        }
+      ],
+      "exports": [
+        "GET"
+      ],
+      "totalLines": 115,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/qr-code/route.ts": {
+      "filePath": "src/app/api/qr-code/route.ts",
+      "contentHash": "d6e1e9588e543d06b6a4333a51544bddf0b2015e96c1919199ed1fc144f57056",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        },
+        {
+          "source": "qrcode",
+          "specifiers": [
+            "QRCode"
+          ]
+        }
+      ],
+      "exports": [
+        "GET"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/route.ts": {
+      "filePath": "src/app/api/route.ts",
+      "contentHash": "bb3323e70b608cf916b285f8942d8efabb02166f84f9e5a8aa6fe9e417344bce",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        }
+      ],
+      "exports": [
+        "GET"
+      ],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/globals.css": {
+      "filePath": "src/app/globals.css",
+      "contentHash": "b10b9d2d01ee73972d7e4e543097a963cdea874d48dcfe60d793958f05e21315",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 175,
+      "hasStructuralAnalysis": false
+    },
+    "src/app/layout.tsx": {
+      "filePath": "src/app/layout.tsx",
+      "contentHash": "8727d653be7bee0aef4bf53a9db6d573d26de70ecfb53934b5d49a0d38ad3665",
+      "functions": [
+        {
+          "name": "RootLayout",
+          "params": [
+            "{\n  children,\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "next/font/google",
+          "specifiers": [
+            "Geist",
+            "Geist_Mono",
+            "Arimo"
+          ]
+        },
+        {
+          "source": "./globals.css",
+          "specifiers": []
+        },
+        {
+          "source": "@/components/ui/toaster",
+          "specifiers": [
+            "Toaster"
+          ]
+        },
+        {
+          "source": "@/components/ThemeProvider",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        }
+      ],
+      "exports": [
+        "metadata",
+        "RootLayout"
+      ],
+      "totalLines": 69,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/page.tsx": {
+      "filePath": "src/app/page.tsx",
+      "contentHash": "e85595d8c7f47a95d1381e6bb3a5c08f472e647f29d3396c6fc4bd8417f68b98",
+      "functions": [
+        {
+          "name": "Home",
+          "params": [],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "LanguageProvider"
+          ]
+        },
+        {
+          "source": "@/components/Header",
+          "specifiers": [
+            "Header"
+          ]
+        },
+        {
+          "source": "@/components/HeroSection",
+          "specifiers": [
+            "HeroSection"
+          ]
+        },
+        {
+          "source": "next/dynamic",
+          "specifiers": [
+            "dynamic"
+          ]
+        }
+      ],
+      "exports": [
+        "Home"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/paginas/[slug]/page.tsx": {
+      "filePath": "src/app/paginas/[slug]/page.tsx",
+      "contentHash": "04bcf79e841bc3d8e8cc6ff8806ea12fce11356e023e3d73cc0933829408bfa0",
+      "functions": [
+        {
+          "name": "GenericPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "useParams",
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "GenericPage"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/trail/[slug]/page.tsx": {
+      "filePath": "src/app/trail/[slug]/page.tsx",
+      "contentHash": "5a9b50975d219e32cb72f39f4d483615d8c9e78705209a40251e1d3da64774c1",
+      "functions": [
+        {
+          "name": "StationPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 72
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "useParams",
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/components/ui/badge",
+          "specifiers": [
+            "Badge"
+          ]
+        },
+        {
+          "source": "@/components/StationNav",
+          "specifiers": [
+            "StationNav"
+          ]
+        },
+        {
+          "source": "@/components/StationCarousel",
+          "specifiers": [
+            "StationCarousel"
+          ]
+        },
+        {
+          "source": "@/hooks/useStations",
+          "specifiers": [
+            "useStations"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "StationPage"
+      ],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/trail/layout.tsx": {
+      "filePath": "src/app/trail/layout.tsx",
+      "contentHash": "b428a8baff30f982d34035c8f8b2e3b4ad1e4e8a4e4a514458f427b948a4c9c6",
+      "functions": [
+        {
+          "name": "TrailLayout",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "LanguageProvider"
+          ]
+        },
+        {
+          "source": "@/components/StationHeader",
+          "specifiers": [
+            "StationHeader"
+          ]
+        },
+        {
+          "source": "@/components/Footer",
+          "specifiers": [
+            "Footer"
+          ]
+        }
+      ],
+      "exports": [
+        "TrailLayout"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/trail/page.tsx": {
+      "filePath": "src/app/trail/page.tsx",
+      "contentHash": "3c8dd31ae748f58893416ca51ca4ede44bc031e05b95cc0803920dcca4d374e1",
+      "functions": [
+        {
+          "name": "StationCard",
+          "params": [
+            "{ station }"
+          ],
+          "exported": false,
+          "lineCount": 58
+        },
+        {
+          "name": "TrailIndexPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 201
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useMemo"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "AnimatePresence"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Filter",
+            "X",
+            "Search"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/badge",
+          "specifiers": [
+            "Badge"
+          ]
+        },
+        {
+          "source": "@/hooks/useStations",
+          "specifiers": [
+            "useStations"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "@/lib/stations",
+          "specifiers": [
+            "categories",
+            "StationCategory"
+          ]
+        }
+      ],
+      "exports": [
+        "TrailIndexPage"
+      ],
+      "totalLines": 281,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ContributionLevels.tsx": {
+      "filePath": "src/components/ContributionLevels.tsx",
+      "contentHash": "f772f770ce12a57bda6de2d128de54cf03d67f042a717a4c99e55946d7a2a66d",
+      "functions": [
+        {
+          "name": "ContributionLevels",
+          "params": [],
+          "exported": true,
+          "lineCount": 65
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "ContributionLevels"
+      ],
+      "totalLines": 98,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/DonationFlow.tsx": {
+      "filePath": "src/components/DonationFlow.tsx",
+      "contentHash": "192abe4b9bbd05a3a8103c79e8aa379d558becb812d862a0546950e13a5e4565",
+      "functions": [
+        {
+          "name": "DonationFlow",
+          "params": [],
+          "exported": true,
+          "lineCount": 207
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useEffect"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "AnimatePresence"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Copy",
+            "Check",
+            "ExternalLink",
+            "Shield",
+            "QrCode",
+            "Wallet",
+            "DollarSign"
+          ]
+        },
+        {
+          "source": "@/components/ui/badge",
+          "specifiers": [
+            "Badge"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "DonationFlow"
+      ],
+      "totalLines": 234,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FAQSection.tsx": {
+      "filePath": "src/components/FAQSection.tsx",
+      "contentHash": "f2f6c03c1953cf6300babff3fe95c369984f169098ee8e580cb7396fa84c442c",
+      "functions": [
+        {
+          "name": "FAQSection",
+          "params": [],
+          "exported": true,
+          "lineCount": 95
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ExternalLink",
+            "HelpCircle"
+          ]
+        },
+        {
+          "source": "@/components/ui/badge",
+          "specifiers": [
+            "Badge"
+          ]
+        },
+        {
+          "source": "@/components/ui/accordion",
+          "specifiers": [
+            "Accordion",
+            "AccordionContent",
+            "AccordionItem",
+            "AccordionTrigger"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "FAQSection"
+      ],
+      "totalLines": 121,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Footer.tsx": {
+      "filePath": "src/components/Footer.tsx",
+      "contentHash": "86636caf23de6671ca8b00225d88345bb1d533e472c6199df2b48e077157b89f",
+      "functions": [
+        {
+          "name": "Footer",
+          "params": [],
+          "exported": true,
+          "lineCount": 102
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Shield",
+            "FileText",
+            "Scale",
+            "ExternalLink"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "Footer"
+      ],
+      "totalLines": 114,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FundUsage.tsx": {
+      "filePath": "src/components/FundUsage.tsx",
+      "contentHash": "5b2439526f70d0608981942e6127ee6814b67a9c50d8d0c70741e0d0a05e57a5",
+      "functions": [
+        {
+          "name": "FundUsage",
+          "params": [],
+          "exported": true,
+          "lineCount": 77
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "next/image",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "FundUsage"
+      ],
+      "totalLines": 102,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Header.tsx": {
+      "filePath": "src/components/Header.tsx",
+      "contentHash": "e66ab0a87832b67b70589fce4ee0268ac0bcd4778f7d59a6217c7acdd13958f3",
+      "functions": [
+        {
+          "name": "Header",
+          "params": [],
+          "exported": true,
+          "lineCount": 187
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useEffect",
+            "useSyncExternalStore"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "AnimatePresence"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Menu",
+            "X",
+            "Moon",
+            "Sun",
+            "Globe",
+            "Bitcoin"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "@/components/ThemeProvider",
+          "specifiers": [
+            "useTheme"
+          ]
+        }
+      ],
+      "exports": [
+        "Header"
+      ],
+      "totalLines": 198,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/HeroSection.tsx": {
+      "filePath": "src/components/HeroSection.tsx",
+      "contentHash": "8b5d0e6747d9d8612cc314fdbfcf27474d4a62c53429a8e79eaeee76969b7aae",
+      "functions": [
+        {
+          "name": "useIsMobile",
+          "params": [],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "HeroSection",
+          "params": [],
+          "exported": true,
+          "lineCount": 208
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useRef",
+            "useMemo",
+            "useState",
+            "useEffect",
+            "memo"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "useScroll",
+            "useTransform",
+            "useReducedMotion",
+            "useSpring"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowDown",
+            "Coins"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "next/image",
+          "specifiers": [
+            "Image"
+          ]
+        }
+      ],
+      "exports": [
+        "HeroSection"
+      ],
+      "totalLines": 317,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/LiveCounter.tsx": {
+      "filePath": "src/components/LiveCounter.tsx",
+      "contentHash": "85862a2ff67deb4b5e33320a14edf2b6691f5a736a282dcacb5b403e6fd486c1",
+      "functions": [
+        {
+          "name": "CountUp",
+          "params": [
+            "{ target, decimals = 8, prefix = \"\" }"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "LiveCounter",
+          "params": [],
+          "exported": true,
+          "lineCount": 165
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useEffect",
+            "useCallback"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "useMotionValue",
+            "useTransform",
+            "animate"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ExternalLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/progress",
+          "specifiers": [
+            "Progress"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        }
+      ],
+      "exports": [
+        "LiveCounter"
+      ],
+      "totalLines": 199,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/StationCarousel.tsx": {
+      "filePath": "src/components/StationCarousel.tsx",
+      "contentHash": "33dc3b79f1c3b2ee3ff289ee85ae7c654ffa5b477040e372ec059b23f43b5b9b",
+      "functions": [
+        {
+          "name": "StationCarousel",
+          "params": [
+            "{ images }"
+          ],
+          "exported": true,
+          "lineCount": 65
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "@/components/ui/carousel",
+          "specifiers": [
+            "Carousel",
+            "CarouselContent",
+            "CarouselItem",
+            "CarouselPrevious",
+            "CarouselNext"
+          ]
+        }
+      ],
+      "exports": [
+        "StationCarousel"
+      ],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/StationHeader.tsx": {
+      "filePath": "src/components/StationHeader.tsx",
+      "contentHash": "44c929ad528ec3d335a14404e26dafe0dbc10ed22177d1df69a6342945408cbb",
+      "functions": [
+        {
+          "name": "StationHeader",
+          "params": [],
+          "exported": true,
+          "lineCount": 167
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useEffect"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion",
+            "AnimatePresence"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "usePathname"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Sun",
+            "Moon",
+            "Globe",
+            "ArrowLeft",
+            "Bitcoin",
+            "Menu",
+            "X"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "@/components/ThemeProvider",
+          "specifiers": [
+            "useTheme"
+          ]
+        }
+      ],
+      "exports": [
+        "StationHeader"
+      ],
+      "totalLines": 179,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/StationNav.tsx": {
+      "filePath": "src/components/StationNav.tsx",
+      "contentHash": "edcfb846b6c69915d1dd8789c0aa87b01ed4de50519cafd8e2dcda9aff1d0c4f",
+      "functions": [
+        {
+          "name": "StationNav",
+          "params": [
+            "{ prev, next }"
+          ],
+          "exported": true,
+          "lineCount": 54
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowLeft",
+            "ArrowRight"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "@/lib/stations",
+          "specifiers": [
+            "Station"
+          ]
+        }
+      ],
+      "exports": [
+        "StationNav"
+      ],
+      "totalLines": 69,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ThemeProvider.tsx": {
+      "filePath": "src/components/ThemeProvider.tsx",
+      "contentHash": "1fbf85195c7980558017e3c2795fd1ba640fa69d8dec1e959e130cbdba0dd60f",
+      "functions": [
+        {
+          "name": "getSystemTheme",
+          "params": [],
+          "returnType": "ResolvedTheme",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "applyThemeClass",
+          "params": [
+            "resolved"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "ThemeProvider",
+          "params": [
+            "{\n  children,\n  defaultTheme = \"dark\",\n}"
+          ],
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "useTheme",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "createContext",
+            "useContext",
+            "useState",
+            "useEffect",
+            "useCallback",
+            "ReactNode"
+          ]
+        }
+      ],
+      "exports": [
+        "ThemeProvider",
+        "useTheme"
+      ],
+      "totalLines": 92,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/accordion.tsx": {
+      "filePath": "src/components/ui/accordion.tsx",
+      "contentHash": "7251e973cc6896411e3348c1e9cd10bb359934b0e766055c9a3439b07b775edc",
+      "functions": [
+        {
+          "name": "Accordion",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "AccordionItem",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AccordionTrigger",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "AccordionContent",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-accordion",
+          "specifiers": [
+            "* as AccordionPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ChevronDownIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/alert-dialog.tsx": {
+      "filePath": "src/components/ui/alert-dialog.tsx",
+      "contentHash": "59967c334f56dd44100e49b1fc18db428e7f15f5a28b9c2c4f9a3b7dcb4db4b7",
+      "functions": [
+        {
+          "name": "AlertDialog",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "AlertDialogTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "AlertDialogPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "AlertDialogOverlay",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "AlertDialogContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "AlertDialogHeader",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AlertDialogFooter",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "AlertDialogTitle",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AlertDialogDescription",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AlertDialogAction",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "AlertDialogCancel",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-alert-dialog",
+          "specifiers": [
+            "* as AlertDialogPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "buttonVariants"
+          ]
+        }
+      ],
+      "exports": [
+        "AlertDialog",
+        "AlertDialogPortal",
+        "AlertDialogOverlay",
+        "AlertDialogTrigger",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "totalLines": 158,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/alert.tsx": {
+      "filePath": "src/components/ui/alert.tsx",
+      "contentHash": "49d8311589b810b106aada8ef7b13f70b2b1f68cfce4e1458b7f31a191f420e9",
+      "functions": [
+        {
+          "name": "Alert",
+          "params": [
+            "{\n  className,\n  variant,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "AlertTitle",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AlertDescription",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Alert",
+        "AlertTitle",
+        "AlertDescription"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/aspect-ratio.tsx": {
+      "filePath": "src/components/ui/aspect-ratio.tsx",
+      "contentHash": "6a75117416aa89200cf31e8d61643b428e812f479caea857c80004b26d893e79",
+      "functions": [
+        {
+          "name": "AspectRatio",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@radix-ui/react-aspect-ratio",
+          "specifiers": [
+            "* as AspectRatioPrimitive"
+          ]
+        }
+      ],
+      "exports": [
+        "AspectRatio"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/avatar.tsx": {
+      "filePath": "src/components/ui/avatar.tsx",
+      "contentHash": "e8672934f1c315f36cdae39380454ba8c2da62aca420dfb827d96693091419c4",
+      "functions": [
+        {
+          "name": "Avatar",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "AvatarImage",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "AvatarFallback",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-avatar",
+          "specifiers": [
+            "* as AvatarPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/badge.tsx": {
+      "filePath": "src/components/ui/badge.tsx",
+      "contentHash": "f41c11fc13e9a1f1b849349cb51b137ddd27de0a17c5339675c789d58f556cc4",
+      "functions": [
+        {
+          "name": "Badge",
+          "params": [
+            "{\n  className,\n  variant,\n  asChild = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slot",
+          "specifiers": [
+            "Slot"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Badge",
+        "badgeVariants"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/breadcrumb.tsx": {
+      "filePath": "src/components/ui/breadcrumb.tsx",
+      "contentHash": "22f3f4c13ed1085c4131379bfccc6fb173a474f861636bc2736506820153aa08",
+      "functions": [
+        {
+          "name": "Breadcrumb",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "BreadcrumbList",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "BreadcrumbItem",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "BreadcrumbLink",
+          "params": [
+            "{\n  asChild,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "BreadcrumbPage",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "BreadcrumbSeparator",
+          "params": [
+            "{\n  children,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "BreadcrumbEllipsis",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slot",
+          "specifiers": [
+            "Slot"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ChevronRight",
+            "MoreHorizontal"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "totalLines": 110,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/button.tsx": {
+      "filePath": "src/components/ui/button.tsx",
+      "contentHash": "82403231e33fd3d45b111e5e819df194cdfa7cef9a726770185724a60bd20932",
+      "functions": [
+        {
+          "name": "Button",
+          "params": [
+            "{\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slot",
+          "specifiers": [
+            "Slot"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Button",
+        "buttonVariants"
+      ],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/calendar.tsx": {
+      "filePath": "src/components/ui/calendar.tsx",
+      "contentHash": "fe832b1ba33bd42a41cd2b66c7e156f5f421af87f8ceb799eea5db48bab6d294",
+      "functions": [
+        {
+          "name": "Calendar",
+          "params": [
+            "{\n  className,\n  classNames,\n  showOutsideDays = true,\n  captionLayout = \"label\",\n  buttonVariant = \"ghost\",\n  formatters,\n  components,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 160
+        },
+        {
+          "name": "CalendarDayButton",
+          "params": [
+            "{\n  className,\n  day,\n  modifiers,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 37
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ChevronDownIcon",
+            "ChevronLeftIcon",
+            "ChevronRightIcon"
+          ]
+        },
+        {
+          "source": "react-day-picker",
+          "specifiers": [
+            "DayButton",
+            "DayPicker",
+            "getDefaultClassNames"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button",
+            "buttonVariants"
+          ]
+        }
+      ],
+      "exports": [
+        "Calendar",
+        "CalendarDayButton"
+      ],
+      "totalLines": 214,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/card.tsx": {
+      "filePath": "src/components/ui/card.tsx",
+      "contentHash": "78cdb63dff3ec7ef074ada630ff20a5d8004768b6cbe24ed134a8bfba12bafbb",
+      "functions": [
+        {
+          "name": "Card",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardTitle",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "CardDescription",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "CardAction",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "CardFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardFooter",
+        "CardTitle",
+        "CardAction",
+        "CardDescription",
+        "CardContent"
+      ],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/carousel.tsx": {
+      "filePath": "src/components/ui/carousel.tsx",
+      "contentHash": "b7ea0dda3903d972c186f739e23da61f547bc83b5a0bf13b16856577846d5fc3",
+      "functions": [
+        {
+          "name": "useCarousel",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "Carousel",
+          "params": [
+            "{\n  orientation = \"horizontal\",\n  opts,\n  setApi,\n  plugins,\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 89
+        },
+        {
+          "name": "CarouselContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "CarouselItem",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "CarouselPrevious",
+          "params": [
+            "{\n  className,\n  variant = \"outline\",\n  size = \"icon\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "CarouselNext",
+          "params": [
+            "{\n  className,\n  variant = \"outline\",\n  size = \"icon\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "embla-carousel-react",
+          "specifiers": [
+            "useEmblaCarousel",
+            "UseEmblaCarouselType"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowLeft",
+            "ArrowRight"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        }
+      ],
+      "exports": [
+        "CarouselApi",
+        "Carousel",
+        "CarouselContent",
+        "CarouselItem",
+        "CarouselPrevious",
+        "CarouselNext"
+      ],
+      "totalLines": 242,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/chart.tsx": {
+      "filePath": "src/components/ui/chart.tsx",
+      "contentHash": "670849399b33fecf7e46aa222c52f6a7c294faac079f5227f8c01c594822fd5d",
+      "functions": [
+        {
+          "name": "useChart",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "ChartContainer",
+          "params": [
+            "{\n  id,\n  className,\n  children,\n  config,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "ChartStyle",
+          "params": [
+            "{ id, config }"
+          ],
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "ChartTooltipContent",
+          "params": [
+            "{\n  active,\n  payload,\n  className,\n  indicator = \"dot\",\n  hideLabel = false,\n  hideIndicator = false,\n  label,\n  labelFormatter,\n  labelClassName,\n  formatter,\n  color,\n  nameKey,\n  labelKey,\n}"
+          ],
+          "exported": true,
+          "lineCount": 143
+        },
+        {
+          "name": "ChartLegendContent",
+          "params": [
+            "{\n  className,\n  hideIcon = false,\n  payload,\n  verticalAlign = \"bottom\",\n  nameKey,\n}"
+          ],
+          "exported": true,
+          "lineCount": 53
+        },
+        {
+          "name": "getPayloadConfigFromPayload",
+          "params": [
+            "config",
+            "payload",
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 37
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "recharts",
+          "specifiers": [
+            "* as RechartsPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "ChartContainer",
+        "ChartTooltip",
+        "ChartTooltipContent",
+        "ChartLegend",
+        "ChartLegendContent",
+        "ChartStyle"
+      ],
+      "totalLines": 354,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/checkbox.tsx": {
+      "filePath": "src/components/ui/checkbox.tsx",
+      "contentHash": "4c395ef15549e46068eb3b32a2a10fb5bfdb01f6834a3c0231a218a529015c83",
+      "functions": [
+        {
+          "name": "Checkbox",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-checkbox",
+          "specifiers": [
+            "* as CheckboxPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Checkbox"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/collapsible.tsx": {
+      "filePath": "src/components/ui/collapsible.tsx",
+      "contentHash": "c2c74dc3e99482d00a57de673b56920860c2ff4b330373d783843f505dc11dae",
+      "functions": [
+        {
+          "name": "Collapsible",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "CollapsibleTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "CollapsibleContent",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@radix-ui/react-collapsible",
+          "specifiers": [
+            "* as CollapsiblePrimitive"
+          ]
+        }
+      ],
+      "exports": [
+        "Collapsible",
+        "CollapsibleTrigger",
+        "CollapsibleContent"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/command.tsx": {
+      "filePath": "src/components/ui/command.tsx",
+      "contentHash": "4fb4f8f95dfbe884ae598661b80e541d62eacdfe2101beab58819ab58b96c2ea",
+      "functions": [
+        {
+          "name": "Command",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "CommandDialog",
+          "params": [
+            "{\n  title = \"Command Palette\",\n  description = \"Search for a command to run...\",\n  children,\n  className,\n  showCloseButton = true,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "CommandInput",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "CommandList",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "CommandEmpty",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "CommandGroup",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "CommandSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CommandItem",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "CommandShortcut",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "cmdk",
+          "specifiers": [
+            "CommandPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "SearchIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/dialog",
+          "specifiers": [
+            "Dialog",
+            "DialogContent",
+            "DialogDescription",
+            "DialogHeader",
+            "DialogTitle"
+          ]
+        }
+      ],
+      "exports": [
+        "Command",
+        "CommandDialog",
+        "CommandInput",
+        "CommandList",
+        "CommandEmpty",
+        "CommandGroup",
+        "CommandItem",
+        "CommandShortcut",
+        "CommandSeparator"
+      ],
+      "totalLines": 185,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/context-menu.tsx": {
+      "filePath": "src/components/ui/context-menu.tsx",
+      "contentHash": "6573f8ed4232ae9801a3098a5cd4549b43a1e0ac1fd2c495e552a862d81fba22",
+      "functions": [
+        {
+          "name": "ContextMenu",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "ContextMenuTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "ContextMenuGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "ContextMenuPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "ContextMenuSub",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "ContextMenuRadioGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "ContextMenuSubTrigger",
+          "params": [
+            "{\n  className,\n  inset,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "ContextMenuSubContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "ContextMenuContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "ContextMenuItem",
+          "params": [
+            "{\n  className,\n  inset,\n  variant = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "ContextMenuCheckboxItem",
+          "params": [
+            "{\n  className,\n  children,\n  checked,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "ContextMenuRadioItem",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "ContextMenuLabel",
+          "params": [
+            "{\n  className,\n  inset,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "ContextMenuSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "ContextMenuShortcut",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-context-menu",
+          "specifiers": [
+            "* as ContextMenuPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckIcon",
+            "ChevronRightIcon",
+            "CircleIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSeparator",
+        "ContextMenuShortcut",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuSubContent",
+        "ContextMenuSubTrigger",
+        "ContextMenuRadioGroup"
+      ],
+      "totalLines": 253,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/dialog.tsx": {
+      "filePath": "src/components/ui/dialog.tsx",
+      "contentHash": "491a87bfae8f28773624d353bf56b9288d0852413e814d508e0d086dc7b06edb",
+      "functions": [
+        {
+          "name": "Dialog",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DialogTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DialogPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DialogClose",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DialogOverlay",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "DialogContent",
+          "params": [
+            "{\n  className,\n  children,\n  showCloseButton = true,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "DialogHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "DialogFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "DialogTitle",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "DialogDescription",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-dialog",
+          "specifiers": [
+            "* as DialogPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "XIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Dialog",
+        "DialogClose",
+        "DialogContent",
+        "DialogDescription",
+        "DialogFooter",
+        "DialogHeader",
+        "DialogOverlay",
+        "DialogPortal",
+        "DialogTitle",
+        "DialogTrigger"
+      ],
+      "totalLines": 144,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/drawer.tsx": {
+      "filePath": "src/components/ui/drawer.tsx",
+      "contentHash": "0c9464ed4f95207ff6ec0b8f433f550388ea0fe57fecd36bbe100b084ee46a3e",
+      "functions": [
+        {
+          "name": "Drawer",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DrawerTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DrawerPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DrawerClose",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DrawerOverlay",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "DrawerContent",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "DrawerHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "DrawerFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "DrawerTitle",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "DrawerDescription",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "vaul",
+          "specifiers": [
+            "DrawerPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Drawer",
+        "DrawerPortal",
+        "DrawerOverlay",
+        "DrawerTrigger",
+        "DrawerClose",
+        "DrawerContent",
+        "DrawerHeader",
+        "DrawerFooter",
+        "DrawerTitle",
+        "DrawerDescription"
+      ],
+      "totalLines": 136,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/dropdown-menu.tsx": {
+      "filePath": "src/components/ui/dropdown-menu.tsx",
+      "contentHash": "9b346378821ba06f9501e4571fd7678cd8819d6833f833daff72bec699565c06",
+      "functions": [
+        {
+          "name": "DropdownMenu",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DropdownMenuPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "DropdownMenuTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "DropdownMenuContent",
+          "params": [
+            "{\n  className,\n  sideOffset = 4,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "DropdownMenuGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "DropdownMenuItem",
+          "params": [
+            "{\n  className,\n  inset,\n  variant = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "DropdownMenuCheckboxItem",
+          "params": [
+            "{\n  className,\n  children,\n  checked,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "DropdownMenuRadioGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "DropdownMenuRadioItem",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "DropdownMenuLabel",
+          "params": [
+            "{\n  className,\n  inset,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "DropdownMenuSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "DropdownMenuShortcut",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "DropdownMenuSub",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "DropdownMenuSubTrigger",
+          "params": [
+            "{\n  className,\n  inset,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "DropdownMenuSubContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-dropdown-menu",
+          "specifiers": [
+            "* as DropdownMenuPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckIcon",
+            "ChevronRightIcon",
+            "CircleIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuPortal",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuGroup",
+        "DropdownMenuLabel",
+        "DropdownMenuItem",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioGroup",
+        "DropdownMenuRadioItem",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuSub",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuSubContent"
+      ],
+      "totalLines": 258,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/form.tsx": {
+      "filePath": "src/components/ui/form.tsx",
+      "contentHash": "b41b4b10f5e11b2acc1accb7b027eba0581b5cdd549d3ccef92e30d1f4efcf54",
+      "functions": [
+        {
+          "name": "FormField",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "useFormField",
+          "params": [],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "FormItem",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "FormLabel",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "FormControl",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "FormDescription",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "FormMessage",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-label",
+          "specifiers": [
+            "* as LabelPrimitive"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slot",
+          "specifiers": [
+            "Slot"
+          ]
+        },
+        {
+          "source": "react-hook-form",
+          "specifiers": [
+            "Controller",
+            "FormProvider",
+            "useFormContext",
+            "useFormState",
+            "ControllerProps",
+            "FieldPath",
+            "FieldValues"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/label",
+          "specifiers": [
+            "Label"
+          ]
+        }
+      ],
+      "exports": [
+        "useFormField",
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormControl",
+        "FormDescription",
+        "FormMessage",
+        "FormField"
+      ],
+      "totalLines": 168,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/hover-card.tsx": {
+      "filePath": "src/components/ui/hover-card.tsx",
+      "contentHash": "031f6a309d87c8e42a2282fccc277dde75e373de8c93dad881582c9dc13e05d0",
+      "functions": [
+        {
+          "name": "HoverCard",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "HoverCardTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "HoverCardContent",
+          "params": [
+            "{\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-hover-card",
+          "specifiers": [
+            "* as HoverCardPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "HoverCard",
+        "HoverCardTrigger",
+        "HoverCardContent"
+      ],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/input-otp.tsx": {
+      "filePath": "src/components/ui/input-otp.tsx",
+      "contentHash": "35d561c352fde4e34fc3481839649728300c01cfadac62aa84c375d6d812f4de",
+      "functions": [
+        {
+          "name": "InputOTP",
+          "params": [
+            "{\n  className,\n  containerClassName,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "InputOTPGroup",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "InputOTPSlot",
+          "params": [
+            "{\n  index,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "InputOTPSeparator",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "input-otp",
+          "specifiers": [
+            "OTPInput",
+            "OTPInputContext"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "MinusIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "InputOTP",
+        "InputOTPGroup",
+        "InputOTPSlot",
+        "InputOTPSeparator"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/input.tsx": {
+      "filePath": "src/components/ui/input.tsx",
+      "contentHash": "6628e8fde207857b9ba08910d386eeea8213d7d745b4e0ae8b95332b52730db9",
+      "functions": [
+        {
+          "name": "Input",
+          "params": [
+            "{ className, type, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Input"
+      ],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/label.tsx": {
+      "filePath": "src/components/ui/label.tsx",
+      "contentHash": "9ec42c8a57e82311118b794318409ee02b2cebfa49ba6cce8457cff6448cd471",
+      "functions": [
+        {
+          "name": "Label",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-label",
+          "specifiers": [
+            "* as LabelPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Label"
+      ],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/menubar.tsx": {
+      "filePath": "src/components/ui/menubar.tsx",
+      "contentHash": "d3c5b6060323b78aef1b32650e22d3d951d1b125404f76ffb967ed80446a3ddd",
+      "functions": [
+        {
+          "name": "Menubar",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "MenubarMenu",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenubarGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenubarPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenubarRadioGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "MenubarTrigger",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "MenubarContent",
+          "params": [
+            "{\n  className,\n  align = \"start\",\n  alignOffset = -4,\n  sideOffset = 8,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "MenubarItem",
+          "params": [
+            "{\n  className,\n  inset,\n  variant = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "MenubarCheckboxItem",
+          "params": [
+            "{\n  className,\n  children,\n  checked,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "MenubarRadioItem",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "MenubarLabel",
+          "params": [
+            "{\n  className,\n  inset,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "MenubarSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "MenubarShortcut",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "MenubarSub",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenubarSubTrigger",
+          "params": [
+            "{\n  className,\n  inset,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "MenubarSubContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-menubar",
+          "specifiers": [
+            "* as MenubarPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckIcon",
+            "ChevronRightIcon",
+            "CircleIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Menubar",
+        "MenubarPortal",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarGroup",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarItem",
+        "MenubarShortcut",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarSub",
+        "MenubarSubTrigger",
+        "MenubarSubContent"
+      ],
+      "totalLines": 277,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/navigation-menu.tsx": {
+      "filePath": "src/components/ui/navigation-menu.tsx",
+      "contentHash": "d71f57fe0f365541fbf5d00196b0b78a461d8c4f38d35293e5754680d93b9245",
+      "functions": [
+        {
+          "name": "NavigationMenu",
+          "params": [
+            "{\n  className,\n  children,\n  viewport = true,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "NavigationMenuList",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "NavigationMenuItem",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "NavigationMenuTrigger",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "NavigationMenuContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "NavigationMenuViewport",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "NavigationMenuLink",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "NavigationMenuIndicator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-navigation-menu",
+          "specifiers": [
+            "* as NavigationMenuPrimitive"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ChevronDownIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuContent",
+        "NavigationMenuTrigger",
+        "NavigationMenuLink",
+        "NavigationMenuIndicator",
+        "NavigationMenuViewport",
+        "navigationMenuTriggerStyle"
+      ],
+      "totalLines": 169,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/pagination.tsx": {
+      "filePath": "src/components/ui/pagination.tsx",
+      "contentHash": "53ffa0474d07dbfe1fb67f043a0ad7e7d24feecf950e65da8b929a90179c6ad4",
+      "functions": [
+        {
+          "name": "Pagination",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "PaginationContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "PaginationItem",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "PaginationLink",
+          "params": [
+            "{\n  className,\n  isActive,\n  size = \"icon\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "PaginationPrevious",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "PaginationNext",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "PaginationEllipsis",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ChevronLeftIcon",
+            "ChevronRightIcon",
+            "MoreHorizontalIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button",
+            "buttonVariants"
+          ]
+        }
+      ],
+      "exports": [
+        "Pagination",
+        "PaginationContent",
+        "PaginationLink",
+        "PaginationItem",
+        "PaginationPrevious",
+        "PaginationNext",
+        "PaginationEllipsis"
+      ],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/popover.tsx": {
+      "filePath": "src/components/ui/popover.tsx",
+      "contentHash": "29a217781737bbf5c430859b3de46097a44ada81c4143c2d05543d2167de0ee1",
+      "functions": [
+        {
+          "name": "Popover",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "PopoverTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "PopoverContent",
+          "params": [
+            "{\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "PopoverAnchor",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-popover",
+          "specifiers": [
+            "* as PopoverPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Popover",
+        "PopoverTrigger",
+        "PopoverContent",
+        "PopoverAnchor"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/progress.tsx": {
+      "filePath": "src/components/ui/progress.tsx",
+      "contentHash": "b57ed2040498b7d3c2c138227fd2bda02e998883d4b2b05f1218efdc7233c78c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-progress",
+          "specifiers": [
+            "* as ProgressPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Progress"
+      ],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/radio-group.tsx": {
+      "filePath": "src/components/ui/radio-group.tsx",
+      "contentHash": "b12ca5cef859dd75b274337234bae66e413b0f97845243254a1dedcb2d7a7237",
+      "functions": [
+        {
+          "name": "RadioGroup",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "RadioGroupItem",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-radio-group",
+          "specifiers": [
+            "* as RadioGroupPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CircleIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "RadioGroup",
+        "RadioGroupItem"
+      ],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/resizable.tsx": {
+      "filePath": "src/components/ui/resizable.tsx",
+      "contentHash": "41043c0f3dec3a41e163fcfbba4ed8138eeafcedd1aa40c007c3e195f34d37df",
+      "functions": [
+        {
+          "name": "ResizablePanelGroup",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "ResizablePanel",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "ResizableHandle",
+          "params": [
+            "{\n  withHandle,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "GripVerticalIcon"
+          ]
+        },
+        {
+          "source": "react-resizable-panels",
+          "specifiers": [
+            "* as ResizablePrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "ResizablePanelGroup",
+        "ResizablePanel",
+        "ResizableHandle"
+      ],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/scroll-area.tsx": {
+      "filePath": "src/components/ui/scroll-area.tsx",
+      "contentHash": "1c5d0b242d0513848f4bfa9b57ba7f438d9b1120617029941bfaa137196ecead",
+      "functions": [
+        {
+          "name": "ScrollArea",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "ScrollBar",
+          "params": [
+            "{\n  className,\n  orientation = \"vertical\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 26
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-scroll-area",
+          "specifiers": [
+            "* as ScrollAreaPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/select.tsx": {
+      "filePath": "src/components/ui/select.tsx",
+      "contentHash": "8795c9fac7c48d565ff6c47cbf4cca8bfefe25d8cb3d7e7aeba36855739a76ab",
+      "functions": [
+        {
+          "name": "Select",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "SelectGroup",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "SelectValue",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "SelectTrigger",
+          "params": [
+            "{\n  className,\n  size = \"default\",\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "SelectContent",
+          "params": [
+            "{\n  className,\n  children,\n  position = \"popper\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "SelectLabel",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "SelectItem",
+          "params": [
+            "{\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "SelectSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "SelectScrollUpButton",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "SelectScrollDownButton",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-select",
+          "specifiers": [
+            "* as SelectPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckIcon",
+            "ChevronDownIcon",
+            "ChevronUpIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Select",
+        "SelectContent",
+        "SelectGroup",
+        "SelectItem",
+        "SelectLabel",
+        "SelectScrollDownButton",
+        "SelectScrollUpButton",
+        "SelectSeparator",
+        "SelectTrigger",
+        "SelectValue"
+      ],
+      "totalLines": 186,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/separator.tsx": {
+      "filePath": "src/components/ui/separator.tsx",
+      "contentHash": "e9dddbd8dbbc0eccd683306481b0f0bbc8e2b60ea97817416ebb9fe7fbbbdca8",
+      "functions": [
+        {
+          "name": "Separator",
+          "params": [
+            "{\n  className,\n  orientation = \"horizontal\",\n  decorative = true,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-separator",
+          "specifiers": [
+            "* as SeparatorPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Separator"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/sheet.tsx": {
+      "filePath": "src/components/ui/sheet.tsx",
+      "contentHash": "3d6a560c635fd91094e43191ecf73b124ccb2537e6060f85d5d31fcf68150e74",
+      "functions": [
+        {
+          "name": "Sheet",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "SheetTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "SheetClose",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "SheetPortal",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "SheetOverlay",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "SheetContent",
+          "params": [
+            "{\n  className,\n  children,\n  side = \"right\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "SheetHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SheetFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SheetTitle",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "SheetDescription",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-dialog",
+          "specifiers": [
+            "* as SheetPrimitive"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "XIcon"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Sheet",
+        "SheetTrigger",
+        "SheetClose",
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "SheetTitle",
+        "SheetDescription"
+      ],
+      "totalLines": 140,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/sidebar.tsx": {
+      "filePath": "src/components/ui/sidebar.tsx",
+      "contentHash": "73561977bb06800b7d7700d844e4219b8dc4d14ac732c7a448e807005286d9f7",
+      "functions": [
+        {
+          "name": "useSidebar",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "SidebarProvider",
+          "params": [
+            "{\n  defaultOpen = true,\n  open: openProp,\n  onOpenChange: setOpenProp,\n  className,\n  style,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 97
+        },
+        {
+          "name": "Sidebar",
+          "params": [
+            "{\n  side = \"left\",\n  variant = \"sidebar\",\n  collapsible = \"offcanvas\",\n  className,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 101
+        },
+        {
+          "name": "SidebarTrigger",
+          "params": [
+            "{\n  className,\n  onClick,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "SidebarRail",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "SidebarInset",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarInput",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SidebarFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SidebarSeparator",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarGroup",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SidebarGroupLabel",
+          "params": [
+            "{\n  className,\n  asChild = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "SidebarGroupAction",
+          "params": [
+            "{\n  className,\n  asChild = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "SidebarGroupContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarMenu",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SidebarMenuItem",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SidebarMenuButton",
+          "params": [
+            "{\n  asChild = false,\n  isActive = false,\n  variant = \"default\",\n  size = \"default\",\n  tooltip,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 49
+        },
+        {
+          "name": "SidebarMenuAction",
+          "params": [
+            "{\n  className,\n  asChild = false,\n  showOnHover = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "SidebarMenuBadge",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "SidebarMenuSkeleton",
+          "params": [
+            "{\n  className,\n  showIcon = false,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "SidebarMenuSub",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "SidebarMenuSubItem",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "SidebarMenuSubButton",
+          "params": [
+            "{\n  asChild = false,\n  size = \"md\",\n  isActive = false,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 31
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slot",
+          "specifiers": [
+            "Slot"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "PanelLeftIcon"
+          ]
+        },
+        {
+          "source": "@/hooks/use-mobile",
+          "specifiers": [
+            "useIsMobile"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/input",
+          "specifiers": [
+            "Input"
+          ]
+        },
+        {
+          "source": "@/components/ui/separator",
+          "specifiers": [
+            "Separator"
+          ]
+        },
+        {
+          "source": "@/components/ui/sheet",
+          "specifiers": [
+            "Sheet",
+            "SheetContent",
+            "SheetDescription",
+            "SheetHeader",
+            "SheetTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/skeleton",
+          "specifiers": [
+            "Skeleton"
+          ]
+        },
+        {
+          "source": "@/components/ui/tooltip",
+          "specifiers": [
+            "Tooltip",
+            "TooltipContent",
+            "TooltipProvider",
+            "TooltipTrigger"
+          ]
+        }
+      ],
+      "exports": [
+        "Sidebar",
+        "SidebarContent",
+        "SidebarFooter",
+        "SidebarGroup",
+        "SidebarGroupAction",
+        "SidebarGroupContent",
+        "SidebarGroupLabel",
+        "SidebarHeader",
+        "SidebarInput",
+        "SidebarInset",
+        "SidebarMenu",
+        "SidebarMenuAction",
+        "SidebarMenuBadge",
+        "SidebarMenuButton",
+        "SidebarMenuItem",
+        "SidebarMenuSkeleton",
+        "SidebarMenuSub",
+        "SidebarMenuSubButton",
+        "SidebarMenuSubItem",
+        "SidebarProvider",
+        "SidebarRail",
+        "SidebarSeparator",
+        "SidebarTrigger",
+        "useSidebar"
+      ],
+      "totalLines": 727,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/skeleton.tsx": {
+      "filePath": "src/components/ui/skeleton.tsx",
+      "contentHash": "f2aea81d8baf2b621945382aabac150e3db40f20d19ac1abea7aff805f1dc33c",
+      "functions": [
+        {
+          "name": "Skeleton",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Skeleton"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/slider.tsx": {
+      "filePath": "src/components/ui/slider.tsx",
+      "contentHash": "55140ef92c201c82d530dede076603611fbfb2cdc899e4d8459b58f6cbb2b235",
+      "functions": [
+        {
+          "name": "Slider",
+          "params": [
+            "{\n  className,\n  defaultValue,\n  value,\n  min = 0,\n  max = 100,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 54
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-slider",
+          "specifiers": [
+            "* as SliderPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Slider"
+      ],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/sonner.tsx": {
+      "filePath": "src/components/ui/sonner.tsx",
+      "contentHash": "321667582d583f79742633632191b037405368c9c0d7f8272e5ff3b45fb35094",
+      "functions": [
+        {
+          "name": "Toaster",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/ThemeProvider",
+          "specifiers": [
+            "useTheme"
+          ]
+        },
+        {
+          "source": "sonner",
+          "specifiers": [
+            "Sonner",
+            "ToasterProps"
+          ]
+        }
+      ],
+      "exports": [
+        "Toaster"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/switch.tsx": {
+      "filePath": "src/components/ui/switch.tsx",
+      "contentHash": "17f2390d98e8ce4d9e90155eac1918266914d6a9ada7c276b5d1c917cef0e969",
+      "functions": [
+        {
+          "name": "Switch",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-switch",
+          "specifiers": [
+            "* as SwitchPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Switch"
+      ],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/table.tsx": {
+      "filePath": "src/components/ui/table.tsx",
+      "contentHash": "7b8c7a952cf49e78aafe5f628c3bd90f7e01bd5602eb5d3650bef5727a8186d7",
+      "functions": [
+        {
+          "name": "Table",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "TableHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "TableBody",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "TableFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "TableRow",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "TableHead",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "TableCell",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "TableCaption",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Table",
+        "TableHeader",
+        "TableBody",
+        "TableFooter",
+        "TableHead",
+        "TableRow",
+        "TableCell",
+        "TableCaption"
+      ],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/tabs.tsx": {
+      "filePath": "src/components/ui/tabs.tsx",
+      "contentHash": "e8469e599381cf021ce751c27cca3d8cb06440a45665ca9c2ef2efb0acef1fd9",
+      "functions": [
+        {
+          "name": "Tabs",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "TabsList",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "TabsTrigger",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "TabsContent",
+          "params": [
+            "{\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-tabs",
+          "specifiers": [
+            "* as TabsPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/textarea.tsx": {
+      "filePath": "src/components/ui/textarea.tsx",
+      "contentHash": "de4e9fb0fd8e8ed10ea2e475ffe202a922ffe77e3f3edb2c517b0781447ad1b4",
+      "functions": [
+        {
+          "name": "Textarea",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Textarea"
+      ],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/toast.tsx": {
+      "filePath": "src/components/ui/toast.tsx",
+      "contentHash": "45d3d86ddb0b098a2bbbdca8458369d4a1fb046f77d9e106b690727ff6658afd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-toast",
+          "specifiers": [
+            "* as ToastPrimitives"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "X"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "ToastProps",
+        "ToastActionElement",
+        "ToastProvider",
+        "ToastViewport",
+        "Toast",
+        "ToastTitle",
+        "ToastDescription",
+        "ToastClose",
+        "ToastAction"
+      ],
+      "totalLines": 129,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/toaster.tsx": {
+      "filePath": "src/components/ui/toaster.tsx",
+      "contentHash": "e4957974d6393d08f8237e6660a522e4f314610c6743b21c28f256efdb7fff7c",
+      "functions": [
+        {
+          "name": "Toaster",
+          "params": [],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/hooks/use-toast",
+          "specifiers": [
+            "useToast"
+          ]
+        },
+        {
+          "source": "@/components/ui/toast",
+          "specifiers": [
+            "Toast",
+            "ToastClose",
+            "ToastDescription",
+            "ToastProvider",
+            "ToastTitle",
+            "ToastViewport"
+          ]
+        }
+      ],
+      "exports": [
+        "Toaster"
+      ],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/toggle-group.tsx": {
+      "filePath": "src/components/ui/toggle-group.tsx",
+      "contentHash": "09eebce0dcbac76f860d4b6df5261c4f385f5ba233f88a0cd8dde91b1772abeb",
+      "functions": [
+        {
+          "name": "ToggleGroup",
+          "params": [
+            "{\n  className,\n  variant,\n  size,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "ToggleGroupItem",
+          "params": [
+            "{\n  className,\n  children,\n  variant,\n  size,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-toggle-group",
+          "specifiers": [
+            "* as ToggleGroupPrimitive"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/toggle",
+          "specifiers": [
+            "toggleVariants"
+          ]
+        }
+      ],
+      "exports": [
+        "ToggleGroup",
+        "ToggleGroupItem"
+      ],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/toggle.tsx": {
+      "filePath": "src/components/ui/toggle.tsx",
+      "contentHash": "b201563ea8cdef3680a3d9bf272cfc5918a5ab6e1079d7ff8d6273df7fce2849",
+      "functions": [
+        {
+          "name": "Toggle",
+          "params": [
+            "{\n  className,\n  variant,\n  size,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-toggle",
+          "specifiers": [
+            "* as TogglePrimitive"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Toggle",
+        "toggleVariants"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/tooltip.tsx": {
+      "filePath": "src/components/ui/tooltip.tsx",
+      "contentHash": "8d8a3645f547334b759341daf94a20b12a8ba17e8de4ad6e4e1c64b38842c1e3",
+      "functions": [
+        {
+          "name": "TooltipProvider",
+          "params": [
+            "{\n  delayDuration = 0,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "Tooltip",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "TooltipTrigger",
+          "params": [
+            "{\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "TooltipContent",
+          "params": [
+            "{\n  className,\n  sideOffset = 0,\n  children,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@radix-ui/react-tooltip",
+          "specifiers": [
+            "* as TooltipPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "src/content/stations.en.ts": {
+      "filePath": "src/content/stations.en.ts",
+      "contentHash": "21c0a1d24ac77b5f2bb514d4cab10e4108b2ca1cd51d1cd4d852572776013c95",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/stations",
+          "specifiers": [
+            "Station"
+          ]
+        }
+      ],
+      "exports": [
+        "stations"
+      ],
+      "totalLines": 319,
+      "hasStructuralAnalysis": true
+    },
+    "src/content/stations.es.ts": {
+      "filePath": "src/content/stations.es.ts",
+      "contentHash": "b3828e334cb4d7d4a493d766c28558b8a9d086ba94dc5a950cffc7a2891862a5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/stations",
+          "specifiers": [
+            "Station"
+          ]
+        }
+      ],
+      "exports": [
+        "stations"
+      ],
+      "totalLines": 319,
+      "hasStructuralAnalysis": true
+    },
+    "src/contexts/LanguageContext.tsx": {
+      "filePath": "src/contexts/LanguageContext.tsx",
+      "contentHash": "089b8ec229d0d682ca958bbcd129816bd2a1109c013f5123d39485b1ecc92605",
+      "functions": [
+        {
+          "name": "LanguageProvider",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "useLanguage",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "createContext",
+            "useContext",
+            "useState",
+            "useCallback",
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "@/translations",
+          "specifiers": [
+            "translations",
+            "Locale",
+            "TranslationKey"
+          ]
+        }
+      ],
+      "exports": [
+        "LanguageProvider",
+        "useLanguage"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/use-mobile.ts": {
+      "filePath": "src/hooks/use-mobile.ts",
+      "contentHash": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+      "functions": [
+        {
+          "name": "useIsMobile",
+          "params": [],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        }
+      ],
+      "exports": [
+        "useIsMobile"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/use-toast.ts": {
+      "filePath": "src/hooks/use-toast.ts",
+      "contentHash": "12f8fcd1101acdd4a1cf6952d85aa8997d2a53aa9956d3cb77a85d441e54b1a9",
+      "functions": [
+        {
+          "name": "genId",
+          "params": [],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "addToRemoveQueue",
+          "params": [
+            "toastId"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "reducer",
+          "params": [
+            "state",
+            "action"
+          ],
+          "returnType": "State",
+          "exported": true,
+          "lineCount": 54
+        },
+        {
+          "name": "dispatch",
+          "params": [
+            "action"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "toast",
+          "params": [
+            "{ ...props }"
+          ],
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "useToast",
+          "params": [],
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/components/ui/toast",
+          "specifiers": [
+            "ToastActionElement",
+            "ToastProps"
+          ]
+        }
+      ],
+      "exports": [
+        "reducer",
+        "useToast",
+        "toast"
+      ],
+      "totalLines": 194,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useStations.ts": {
+      "filePath": "src/hooks/useStations.ts",
+      "contentHash": "2f92ae9d86108186fb93416fe27b9d31bc341418d7cec74fb323abd411e920cf",
+      "functions": [
+        {
+          "name": "useStations",
+          "params": [],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo"
+          ]
+        },
+        {
+          "source": "@/contexts/LanguageContext",
+          "specifiers": [
+            "useLanguage"
+          ]
+        },
+        {
+          "source": "@/content/stations.es",
+          "specifiers": [
+            "stationsEs"
+          ]
+        },
+        {
+          "source": "@/content/stations.en",
+          "specifiers": [
+            "stationsEn"
+          ]
+        },
+        {
+          "source": "@/lib/stations",
+          "specifiers": [
+            "getStationBySlug",
+            "getAdjacentStations",
+            "Station",
+            "StationCategory"
+          ]
+        }
+      ],
+      "exports": [
+        "useStations"
+      ],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/btc.ts": {
+      "filePath": "src/lib/btc.ts",
+      "contentHash": "a7e96bee62fb8e6b44b2622d114ee98a50026bd720faee853f1bb4ac8603188b",
+      "functions": [
+        {
+          "name": "isValidBTCAddress",
+          "params": [
+            "address"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "isValidBTCAddress"
+      ],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/db.ts": {
+      "filePath": "src/lib/db.ts",
+      "contentHash": "ce5d51390121a452bc0a4d5208deaff71c583177773bcbbcd15b0af8ab48e2fc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "PrismaClient"
+          ]
+        }
+      ],
+      "exports": [
+        "db"
+      ],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/stations.ts": {
+      "filePath": "src/lib/stations.ts",
+      "contentHash": "e4b615018cc8403471a4fc7f5d0d0884448add60ed51e4e36dec7741be322bdb",
+      "functions": [
+        {
+          "name": "getStationBySlug",
+          "params": [
+            "stationList",
+            "slug"
+          ],
+          "returnType": "Station | undefined",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getAdjacentStations",
+          "params": [
+            "stationList",
+            "slug"
+          ],
+          "returnType": "{ prev: Station | null; next: Station | null }",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "getCategories",
+          "params": [
+            "stationList"
+          ],
+          "returnType": "StationCategory[]",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "categories",
+        "stations",
+        "getStationBySlug",
+        "getAdjacentStations",
+        "getCategories"
+      ],
+      "totalLines": 303,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/utils.ts": {
+      "filePath": "src/lib/utils.ts",
+      "contentHash": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d",
+      "functions": [
+        {
+          "name": "cn",
+          "params": [
+            "...inputs"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "clsx",
+          "specifiers": [
+            "clsx",
+            "ClassValue"
+          ]
+        },
+        {
+          "source": "tailwind-merge",
+          "specifiers": [
+            "twMerge"
+          ]
+        }
+      ],
+      "exports": [
+        "cn"
+      ],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "src/translations/index.ts": {
+      "filePath": "src/translations/index.ts",
+      "contentHash": "279d7a5e29e644b53821553f7173db46084f2b0d51fa25f0c4b13a7b0150f1f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "translations"
+      ],
+      "totalLines": 326,
+      "hasStructuralAnalysis": true
+    },
+    "tailwind.config.ts": {
+      "filePath": "tailwind.config.ts",
+      "contentHash": "ade682235e52f45b1c1dfc020f0bdb9f27b94fcff60afaa3272fae22fe5c0c54",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "tailwindcss",
+          "specifiers": [
+            "Config"
+          ]
+        },
+        {
+          "source": "tailwindcss-animate",
+          "specifiers": [
+            "tailwindcssAnimate"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "5627b3f441adc62af9e6420045fa0452d7c02bfcea664ec5758db46504631609",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "worklog.md": {
+      "filePath": "worklog.md",
+      "contentHash": "82eb300df576850473b914df42d34b3bca191950af23eaa3b4f4647cdd84b5ea",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

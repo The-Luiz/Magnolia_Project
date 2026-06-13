@@ -1,0 +1,16 @@
+{
+  "issues": [],
+  "fixes": [
+    "Changed 26 nodes from type \"library\" to \"module\"",
+    "Changed 6 nodes from type \"script\" to \"file\" and updated IDs",
+    "Updated 23 edge references from file:script: to file:",
+    "All edges have required fields (source, target, type, weight)",
+    "All nodes have required fields (id, type, name, summary, tags, complexity)",
+    "No duplicate node IDs"
+  ],
+  "warnings": [
+    "Node \"document:download/README.md\" has type \"file\" but ID prefix \"document\" (expected file)",
+    "Node \"schema:prisma/schema.prisma\" has type \"file\" but ID prefix \"schema\" (expected file)",
+    "Node \"document:public/robots.txt\" has type \"file\" but ID prefix \"document\" (expected file)"
+  ]
+}

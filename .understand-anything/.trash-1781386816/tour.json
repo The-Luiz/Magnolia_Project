@@ -1,0 +1,62 @@
+[
+  {
+    "order": 1,
+    "title": "Visión General del Proyecto",
+    "description": "Comienza aquí para entender el propósito, la arquitectura general y las convenciones del proyecto Magnolia Bitcoin Memorial",
+    "nodeIds": ["document:DESIGN.md", "document:AGENTS.md", "config:package.json"]
+  },
+  {
+    "order": 2,
+    "title": "Punto de Entrada de la Aplicación",
+    "description": "Layout raíz de Next.js que configura metadatos SEO, fuentes (Geist, Arimo), ThemeProvider con modo oscuro por defecto, script inline de persistencia de tema y Toaster de shadcn/ui",
+    "nodeIds": ["file:src/app/layout.tsx"]
+  },
+  {
+    "order": 3,
+    "title": "Sistema de Diseño y Estilos Globales",
+    "description": "Paleta de colores azul profundo (#0A1C3A) y dorado (#F89C24), tipografía Arimo, variables CSS para temas claro/oscuro, animaciones personalizadas y scrollbar estilizado",
+    "nodeIds": ["file:src/app/globals.css", "file:tailwind.config.ts", "document:DESIGN.md"]
+  },
+  {
+    "order": 4,
+    "title": "Páginas y Enrutamiento",
+    "description": "Página principal con secciones orquestadas (Hero, LiveCounter, FundUsage, ContributionLevels, DonationFlow, FAQ, Footer), páginas dinámicas genéricas bilingües y el Bitcoin Trail con índice y detalle de estaciones",
+    "nodeIds": ["file:src/app/page.tsx", "file:src/app/paginas/[slug]/page.tsx", "file:src/app/trail/page.tsx", "file:src/app/trail/[slug]/page.tsx", "file:src/app/trail/layout.tsx"]
+  },
+  {
+    "order": 5,
+    "title": "Componentes de UI del Dominio",
+    "description": "Componentes React personalizados que componen la landing page y el Bitcoin Trail: navegación con Header y StationHeader, HeroSection con parallax y partículas, contador en vivo, flujo de donación con QR, niveles de contribución y acordeón FAQ",
+    "nodeIds": ["file:src/components/Header.tsx", "file:src/components/HeroSection.tsx", "file:src/components/LiveCounter.tsx", "file:src/components/FundUsage.tsx", "file:src/components/ContributionLevels.tsx", "file:src/components/DonationFlow.tsx", "file:src/components/FAQSection.tsx", "file:src/components/Footer.tsx", "file:src/components/StationHeader.tsx", "file:src/components/StationNav.tsx", "file:src/components/StationCarousel.tsx"]
+  },
+  {
+    "order": 6,
+    "title": "Componentes Base shadcn/ui",
+    "description": "Más de 48 primitivas de UI reutilizables basadas en Radix UI con estilo new-york: botones, tarjetas, diálogos, acordeones, carruseles, menús desplegables, barras de progreso y más",
+    "nodeIds": ["config:components.json", "file:src/components/ui/button.tsx", "file:src/components/ui/card.tsx", "file:src/components/ui/accordion.tsx", "file:src/components/ui/progress.tsx", "file:src/components/ui/carousel.tsx", "file:src/lib/utils.ts"]
+  },
+  {
+    "order": 7,
+    "title": "Internacionalización, Contenido y Estado",
+    "description": "Sistema i18n custom con contexto LanguageContext (es/en), traducciones centralizadas, datos educativos bilingües del Bitcoin Trail con 10 estaciones, hook useStations y utilidades de estaciones",
+    "nodeIds": ["file:src/contexts/LanguageContext.tsx", "file:src/translations/index.ts", "file:src/lib/stations.ts", "file:src/hooks/useStations.ts", "file:src/components/ThemeProvider.tsx"]
+  },
+  {
+    "order": 8,
+    "title": "Base de Datos y ORM",
+    "description": "Esquema Prisma con modelos User y Post sobre SQLite, cliente singleton con patrón globalThis para evitar múltiples instancias en desarrollo",
+    "nodeIds": ["schema:prisma/schema.prisma", "file:src/lib/db.ts", "file:db/custom.db"]
+  },
+  {
+    "order": 9,
+    "title": "API de Next.js",
+    "description": "Rutas API que consultan el saldo BTC en tiempo real via mempool.space con caché en memoria de 90s, generación de códigos QR para donaciones, y health check básico",
+    "nodeIds": ["file:src/app/api/btc-balance/route.ts", "file:src/app/api/qr-code/route.ts", "file:src/app/api/route.ts", "file:src/lib/btc.ts"]
+  },
+  {
+    "order": 10,
+    "title": "Infraestructura y Despliegue",
+    "description": "Scripts de desarrollo/producción con Bun, proxy inverso Caddy, configuración standalone de Next.js, TypeScript strict mode, ESLint permisivo y mini-services opcionales",
+    "nodeIds": ["file:.zscripts/dev.sh", "file:.zscripts/build.sh", "file:.zscripts/start.sh", "config:Caddyfile", "config:next.config.ts", "config:tsconfig.json", "config:eslint.config.mjs", "config:postcss.config.mjs"]
+  }
+]
