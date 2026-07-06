@@ -9,11 +9,12 @@ import React, {
   type ReactNode,
 } from "react";
 
-type Theme = "dark" | "light";
+type Theme = "dark" | "light" | "system";
 type ResolvedTheme = "dark" | "light";
 
 interface ThemeContextType {
   theme: Theme;
+  resolvedTheme: ResolvedTheme;
   setTheme: (theme: Theme) => void;
   themes: Theme[];
 }
@@ -75,7 +76,7 @@ export function ThemeProvider({
 
   return (
     <ThemeContext.Provider
-      value={{ theme, setTheme, themes: ["dark", "light"] }}
+      value={{ theme, resolvedTheme, setTheme, themes: ["dark", "light", "system"] }}
     >
       {children}
     </ThemeContext.Provider>

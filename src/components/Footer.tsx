@@ -60,14 +60,14 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col space-y-2 text-sm text-white/80">
               <Link
-                href="/paginas/sobre-nosotros"
+                href="/pages/about-us"
                 className="flex items-center gap-2 hover:text-[#F89C24] transition-colors"
               >
                 <Info className="h-3.5 w-3.5" />
                 {t("footerAboutLink")}
               </Link>
               <Link
-                href="/paginas/contacto"
+                href="/pages/contact"
                 className="flex items-center gap-2 hover:text-[#F89C24] transition-colors"
               >
                 <Mail className="h-3.5 w-3.5" />
@@ -87,22 +87,22 @@ export default function Footer() {
               {t("footerLegal")}
             </h3>
             <div className="flex flex-col space-y-2 text-sm text-white/80">
-              <a href="#" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
+              <Link href="/pages/privacy-policy" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
                 <Shield className="h-3.5 w-3.5" />
                 {t("footerPrivacy")}
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
+              </Link>
+              <Link href="/pages/terms-of-use" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
                 <Scale className="h-3.5 w-3.5" />
                 {t("footerTerms")}
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
+              </Link>
+              <Link href="/pages/financial-audit" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
                 <FileText className="h-3.5 w-3.5" />
                 {t("footerAudit")}
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
+              </Link>
+              <Link href="/pages/legal-disclaimer" className="flex items-center gap-2 hover:text-[#F89C24] transition-colors">
                 <ExternalLink className="h-3.5 w-3.5" />
                 {t("footerDisclaimer")}
-              </a>
+              </Link>
             </div>
           </motion.div>
 

@@ -3,11 +3,11 @@
 ## Stack
 - **Next.js 16** App Router (Turbopack). All pages under `src/app/`.
 - **React 19**, **TypeScript 5** (build errors silenced in `next.config.ts`).
-- **Tailwind CSS v4** + `@tailwindcss/postcss` (NO `tailwind.config.ts` — v4 is config-less; theming lives in `src/app/globals.css`).
+- **Tailwind CSS v4** + `@tailwindcss/postcss` (NO `tailwind.config.ts` — v4 is config-less; theming lives in `src/app/globals.css`). `tw-animate-css` is the v4 animation plugin (imported in `globals.css`).
 - **shadcn/ui** (new-york style). 15 primitives in `src/components/ui/` — only what is actually used.
 - **framer-motion** for animations.
 - **lucide-react** for icons.
-- **next-themes-style custom** `ThemeProvider` in `src/components/ThemeProvider.tsx` (dark default, `class` strategy).
+- **Custom** `ThemeProvider` in `src/components/ThemeProvider.tsx` — `useTheme()` from `@/components/ThemeProvider`, NOT from `next-themes` (that package is an unused dependency). Dark default, `class` strategy.
 - **Custom i18n** (NOT `next-intl`): `src/translations/index.ts` + `LanguageContext` (`Locale = "es" | "en"`).
 - **Mempool.space + CoinGecko** for the live BTC counter. Address and constants centralized in `src/lib/btc.ts`.
 
@@ -27,8 +27,11 @@ npm run lint           # eslint .
 
 ## Architecture
 - **App Router** under `src/app/` — `page.tsx` (home), `trail/page.tsx` (index),
-  `trail/[slug]/page.tsx` (station detail), `paginas/[slug]/page.tsx`
-  (sobre-nosotros, contacto), `api/btc-balance/route.ts`, `api/qr-code/route.ts`.
+  `trail/[slug]/page.tsx` (station detail), `pages/about-us/page.tsx`,
+  `pages/contact/page.tsx`, `pages/privacy-policy/page.tsx`,
+  `pages/terms-of-use/page.tsx`, `pages/financial-audit/page.tsx`,
+  `pages/legal-disclaimer/page.tsx`, `api/btc-balance/route.ts`,
+  `api/qr-code/route.ts`.
 - **Standalone output** — `output: "standalone"` in `next.config.ts`. The
   `build` script copies `.next/static` and `public/` into `.next/standalone/`
   manually.
@@ -57,9 +60,9 @@ npm run lint           # eslint .
 | `src/app/` | App Router pages and API routes |
 | `src/components/` | Custom components (Header, Hero, etc.) |
 | `src/components/ui/` | shadcn/ui primitives in use |
-| `src/lib/` | `btc.ts` (constants), `utils.ts` (cn helper) |
+| `src/lib/` | `btc.ts` (BTC constant, API URLs), `stations.ts` (Station types, categories, helpers), `utils.ts` (cn helper) |
 | `src/translations/` | i18n strings (es/en) |
 | `src/contexts/` | React contexts (Language) |
-| `src/hooks/` | Custom hooks (`useStations`, `use-toast`) |
+| `src/hooks/` | Custom hooks (`useStations`, `use-toast`, `use-mobile`) |
 | `src/content/` | Bilingual station data (`stations.es.ts`, `stations.en.ts`) |
 | `public/` | Static assets (Parque_Imagen, satoshi-statue, bitcoin-trail) |
