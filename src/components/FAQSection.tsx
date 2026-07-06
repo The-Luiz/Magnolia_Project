@@ -11,8 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const BTC_ADDRESS = "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh";
+import { BTC_ADDRESS } from "@/lib/btc";
 
 const faqItems = [
   { questionKey: "faqQ1" as const, answerKey: "faqA1" as const },
@@ -100,7 +99,7 @@ export default function FAQSection() {
         >
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white dark:bg-[#0d1b30] rounded-xl border border-[#1E3A6F]/10 dark:border-white/5 px-6 py-4 shadow-sm">
             <p className="text-sm text-[#1E2A3E]/70 dark:text-white/60 font-[Arimo]">
-              {t("faqA1").split(".")[0]}.
+              {t("faqCtaNote")}
             </p>
             <a
               href={`https://mempool.space/address/${BTC_ADDRESS}`}

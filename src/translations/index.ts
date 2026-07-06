@@ -121,6 +121,7 @@ export const translations = {
     faqA6:
       "Actualmente solo aceptamos Bitcoin (BTC) para mantener la simplicidad y la transparencia. Podemos considerar otras criptomonedas en el futuro según la demanda.",
     faqViewBlockchain: "Ver Cartera en Blockchain",
+    faqCtaNote: "Todas las donaciones son verificables en la blockchain pública.",
 
     // Footer
     footerTagline:
@@ -142,6 +143,8 @@ export const translations = {
     footerRights: "Todos los derechos reservados.",
     footerDisclaimerText:
       "Las contribuciones son voluntarias y no constituyen inversión. Bitcoin es un activo volátil. Consulte asesoría profesional antes de donar.",
+    footerAboutLink: "Sobre Nosotros",
+    footerContactLink: "Contacto",
 
     // Trail
     trailBack: "Volver al inicio",
@@ -281,6 +284,7 @@ export const translations = {
     faqA6:
       "Currently we only accept Bitcoin (BTC) to maintain simplicity and transparency. We may consider other cryptocurrencies in the future based on demand.",
     faqViewBlockchain: "View Wallet on Blockchain",
+    faqCtaNote: "All donations are verifiable on the public blockchain.",
 
     // Footer
     footerTagline:
@@ -302,6 +306,8 @@ export const translations = {
     footerRights: "All rights reserved.",
     footerDisclaimerText:
       "Contributions are voluntary and do not constitute an investment. Bitcoin is a volatile asset. Seek professional advice before donating.",
+    footerAboutLink: "About Us",
+    footerContactLink: "Contact",
 
     // Trail
     trailBack: "Back to home",

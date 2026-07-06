@@ -14,8 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const BTC_ADDRESS = "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh";
+import { BTC_ADDRESS } from "@/lib/btc";
 
 const steps = [
   { icon: Wallet, titleKey: "donateStep1Title" as const, descKey: "donateStep1Desc" as const },

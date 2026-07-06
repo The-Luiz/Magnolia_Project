@@ -6,7 +6,10 @@ import {
   FileText,
   Scale,
   ExternalLink,
+  Info,
+  Mail,
 } from "lucide-react";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
@@ -29,14 +32,14 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Columna 1: Marca */}
+        <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Column 1: Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="md:col-span-1"
           >
-
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               {t("footerAboutDesc")}
             </p>
@@ -45,12 +48,40 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Columna 2: Enlaces Legales */}
+          {/* Column 2: Project links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white/80 mb-4">
+              {t("footerAbout")}
+            </h3>
+            <div className="flex flex-col space-y-2 text-sm text-white/80">
+              <Link
+                href="/paginas/sobre-nosotros"
+                className="flex items-center gap-2 hover:text-[#F89C24] transition-colors"
+              >
+                <Info className="h-3.5 w-3.5" />
+                {t("footerAboutLink")}
+              </Link>
+              <Link
+                href="/paginas/contacto"
+                className="flex items-center gap-2 hover:text-[#F89C24] transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5" />
+                {t("footerContactLink")}
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Column 3: Legal */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
           >
             <h3 className="text-sm font-bold uppercase tracking-wider text-white/80 mb-4">
               {t("footerLegal")}
@@ -75,12 +106,12 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Columna 3: Ubicación */}
+          {/* Column 4: Location */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
           >
             <p className="text-sm font-bold uppercase tracking-wider text-[#F89C24] mb-4">
               {t("footerLocationLabel")}

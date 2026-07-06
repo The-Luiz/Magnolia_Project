@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
-
-const BTC_ADDRESS = "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"; // Example address
-const MEMPOOL_API = "https://mempool.space/api/address";
+import {
+  BTC_ADDRESS,
+  MEMPOOL_API,
+  COINGECKO_API,
+  BTC_FUNDRAISING_GOAL_USD,
+  BTC_USD_FALLBACK_PRICE,
+  BTC_BALANCE_CACHE_TTL_MS,
+} from "@/lib/btc";
 
 interface ChainStats {
   funded_txo_sum: number;
@@ -26,24 +31,20 @@ interface BTCDalanceResponse {
   progress_percent: number;
 }
 
-// Cache to avoid rate limiting
+// In-memory cache to avoid rate-limiting mempool.space and coingecko.
 let cache: { data: BTCDalanceResponse; timestamp: number } | null = null;
-const CACHE_TTL = 90_000; // 30 seconds
 
 export async function GET() {
   try {
     const now = Date.now();
 
-    // Return cached data if still valid
-    if (cache && now - cache.timestamp < CACHE_TTL) {
+    if (cache && now - cache.timestamp < BTC_BALANCE_CACHE_TTL_MS) {
       return NextResponse.json(cache.data);
     }
 
     const response = await fetch(`${MEMPOOL_API}/${BTC_ADDRESS}`, {
       next: { revalidate: 30 },
-      headers: {
-        Accept: "application/json",
-      },
+      headers: { Accept: "application/json" },
     });
 
     if (!response.ok) {
@@ -52,31 +53,25 @@ export async function GET() {
 
     const data: MempoolResponse = await response.json();
 
-    // Calculate net balance: funded - spent (in satoshis)
     const balance_satoshi =
       data.chain_stats.funded_txo_sum - data.chain_stats.spent_txo_sum;
     const balance_btc = balance_satoshi / 100_000_000;
 
-    // Approximate USD value (you can use a price API for real-time)
-    // Using a rough estimate; in production, fetch from CoinGecko or similar
     let usd_approximate = 0;
     try {
-      const priceRes = await fetch(
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
-        { next: { revalidate: 60 } }
-      );
+      const priceRes = await fetch(COINGECKO_API, {
+        next: { revalidate: 60 },
+      });
       if (priceRes.ok) {
         const priceData = await priceRes.json();
         usd_approximate = balance_btc * (priceData.bitcoin?.usd || 0);
       }
     } catch {
-      // Fallback estimate
-      usd_approximate = balance_btc * 95000;
+      usd_approximate = balance_btc * BTC_USD_FALLBACK_PRICE;
     }
 
-    const goal_usd = 22000;
     const progress_percent = Math.min(
-      (usd_approximate / goal_usd) * 100,
+      (usd_approximate / BTC_FUNDRAISING_GOAL_USD) * 100,
       100
     );
 
@@ -86,8 +81,8 @@ export async function GET() {
       balance_btc,
       tx_count: data.chain_stats.tx_count,
       usd_approximate: Math.round(usd_approximate),
-      goal_usd,
-      goal_btc: goal_usd / 95000, // approximate
+      goal_usd: BTC_FUNDRAISING_GOAL_USD,
+      goal_btc: BTC_FUNDRAISING_GOAL_USD / BTC_USD_FALLBACK_PRICE,
       progress_percent,
     };
 
@@ -97,15 +92,14 @@ export async function GET() {
   } catch (error) {
     console.error("BTC Balance fetch error:", error);
 
-    // Return fallback data
     const fallbackData: BTCDalanceResponse = {
       address: BTC_ADDRESS,
       balance_satoshi: 0,
       balance_btc: 0,
       tx_count: 0,
       usd_approximate: 0,
-      goal_usd: 22000,
-      goal_btc: 0.2316,
+      goal_usd: BTC_FUNDRAISING_GOAL_USD,
+      goal_btc: BTC_FUNDRAISING_GOAL_USD / BTC_USD_FALLBACK_PRICE,
       progress_percent: 0,
     };
 

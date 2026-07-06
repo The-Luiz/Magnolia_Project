@@ -1,4 +1,3 @@
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import dynamic from "next/dynamic";
@@ -12,19 +11,17 @@ const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function Home() {
   return (
-    <LanguageProvider>
-        <div className="min-h-screen flex flex-col transition-colors duration-300">
-          <Header />
-          <main className="flex-1">
-            <HeroSection />
-            <LiveCounter />
-            <FundUsage />
-            <ContributionLevels />
-            <DonationFlow />
-            <FAQSection />
-          </main>
-          <Footer />
-        </div>
-      </LanguageProvider>
+    <div className="min-h-screen flex flex-col transition-colors duration-300">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <LiveCounter />
+        <FundUsage />
+        <ContributionLevels />
+        <DonationFlow />
+        <FAQSection />
+      </main>
+      <Footer />
+    </div>
   );
 }

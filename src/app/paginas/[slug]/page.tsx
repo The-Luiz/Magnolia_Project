@@ -22,10 +22,9 @@ const pageContent: Record<string, { title: Record<string, string>; content: Reco
 };
 
 export default function GenericPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+  const params = useParams<{ slug: string }>();
+  const slug = params?.slug ?? "";
   const { locale } = useLanguage();
-
   const page = pageContent[slug];
 
   if (!page) {
