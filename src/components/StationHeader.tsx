@@ -64,7 +64,6 @@ export default function StationHeader({
             {mounted && (
               <Button
                 variant="ghost"
-                size="icon"
                 onClick={toggleLanguage}
                 className="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 h-auto"
                 aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
@@ -78,9 +77,8 @@ export default function StationHeader({
             {mounted && (
               <Button
                 variant="ghost"
-                size="icon"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-white/80 hover:text-white hover:bg-white/10"
+                className="text-white/80 hover:text-white hover:bg-white/10 p-2"
                 aria-label="Toggle dark mode"
               >
                 <AnimatePresence mode="wait">
