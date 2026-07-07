@@ -9,7 +9,11 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/components/ThemeProvider";
 
-export default function StationHeader() {
+export default function StationHeader({
+  hideBack,
+}: {
+  hideBack?: boolean;
+} = {}) {
   const { locale, toggleLanguage } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -35,7 +39,7 @@ export default function StationHeader() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Left: Back button (hidden on index) + Logo */}
           <div className="flex items-center gap-3">
-            {!isIndex && (
+            {!hideBack && !isIndex && (
               <Link
                 href="/trail"
                 className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-[Arimo] font-medium"
@@ -151,7 +155,7 @@ export default function StationHeader() {
             className="sm:hidden bg-[#0A1C3A]/95 backdrop-blur-md overflow-hidden border-t border-white/10"
           >
             <div className="px-4 py-4 space-y-2">
-              {!isIndex && (
+              {!hideBack && !isIndex && (
                 <Link
                   href="/trail"
                   onClick={() => setMobileOpen(false)}

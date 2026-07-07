@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Header from "@/components/Header";
+import StationHeader from "@/components/StationHeader";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -22,7 +22,7 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-300">
-      <Header />
+      <StationHeader hideBack />
       <main className="flex-1 pt-20 sm:pt-24">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <motion.h1
