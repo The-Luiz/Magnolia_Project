@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Globe, Bitcoin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -38,10 +37,7 @@ export default function Header() {
   const closeMobile = () => setMobileOpen(false);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#0A1C3A]/95 backdrop-blur-md shadow-lg"
@@ -104,17 +100,11 @@ export default function Header() {
                 className="text-white/80 hover:text-white hover:bg-white/10"
                 aria-label="Toggle dark mode"
               >
-                <AnimatePresence mode="wait">
-                  {theme === "dark" ? (
-                    <motion.div key="sun" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <Sun className="h-4 w-4" />
-                    </motion.div>
-                  ) : (
-                    <motion.div key="moon" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <Moon className="h-4 w-4" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
               </Button>
             )}
 
@@ -136,47 +126,34 @@ export default function Header() {
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
             >
-              <AnimatePresence mode="wait">
-                {mobileOpen ? (
-                  <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                    <X className="h-5 w-5" />
-                  </motion.div>
-                ) : (
-                  <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-                    <Menu className="h-5 w-5" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+      {mobileOpen && (
+          <nav
             className="md:hidden bg-[#0A1C3A]/95 backdrop-blur-md overflow-hidden border-t border-white/10"
             role="navigation"
             aria-label="Mobile navigation"
           >
             <div className="px-4 py-4 space-y-1">
-              {navItems.map((item, i) => (
-                <motion.a
+              {navItems.map((item) => (
+                <a
                   key={item.key}
                   href={`#${item.key}`}
                   onClick={closeMobile}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.05 }}
+
                   className="w-full block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
                 >
                   {item.label}
-                </motion.a>
+                </a>
               ))}
               <Link href="/trail" onClick={closeMobile} className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium">
                 {t("navTrail")}
@@ -189,9 +166,8 @@ export default function Header() {
                 </Button>
               </a>
             </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          </nav>
+      )}
+    </header>
   );
 }

@@ -1,201 +1,20 @@
 "use client";
 
-import { useRef, useMemo, useState, useEffect, memo } from "react";
-import { motion, useScroll, useTransform, useReducedMotion, useSpring } from "framer-motion";
 import { ArrowDown, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
-// ============================================
-// 3. LÍNEAS OPTIMIZADAS (CSS en móvil, Motion en desktop)
-// ============================================
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-  
-  return isMobile;
-}
-
-// ============================================
-// 2. PARTÍCULAS OPTIMIZADAS (memoizadas, menos en móvil)
-// ============================================
-const FloatingParticle = memo(function FloatingParticle({ 
-  delay, x, y, size, isMobile 
-}: { 
-  delay: number; x: string; y: string; size: number; isMobile: boolean 
-}) {
-  // En móvil: solo animamos opacity y scale, no x/y para evitar layout thrashing
-  const animate = isMobile 
-    ? { opacity: [0, 0.5, 0], scale: [0, 1, 0] }
-    : { 
-        opacity: [0, 0.6, 0.3, 0.6, 0], 
-        scale: [0, 1, 0.8, 1.2, 0],
-        y: [0, -30, -15, -40, -60],
-        x: [0, -10, 5, -5, 0],
-      };
-      
-  const duration = isMobile ? 4 : 6;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={animate}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        repeatType: "loop" as const,
-        ease: "easeInOut" as const,
-      }}
-      // GPU LAYER + will-change
-      style={{ 
-        left: x, 
-        top: y, 
-        width: size, 
-        height: size,
-        willChange: "transform, opacity",
-        transform: "translateZ(0)",
-      }}
-      className="absolute rounded-full bg-[#F89C24]/30"
-    />
-  );
-});
-
-// ============================================
-// 3. LÍNEAS OPTIMIZADAS (CSS en móvil, Motion en desktop)
-// ============================================
-const AnimatedLine = memo(function AnimatedLine({ 
-  delay, className, isMobile 
-}: { 
-  delay: number; className?: string; isMobile: boolean 
-}) {
-  if (isMobile) {
-    // En móvil: usar CSS animation nativa (WAAPI/GPU) en lugar de JS
-    return (
-      <div 
-        className={`origin-bottom rounded-full bg-gradient-to-t from-[#F89C24] via-[#F89C24]/40 to-transparent animate-pulse-line ${className}`}
-        style={{ 
-          animationDelay: `${delay}s`,
-          willChange: "transform",
-          transform: "translateZ(0)",
-        }}
-      />
-    );
-  }
-
-  return (
-    <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: [0, 1, 0.7, 1] }}
-      transition={{
-        duration: 2.5,
-        delay,
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-        ease: "easeInOut" as const,
-      }}
-      className={`origin-bottom rounded-full bg-gradient-to-t from-[#F89C24] via-[#F89C24]/40 to-transparent ${className}`}
-      style={{ willChange: "transform", transform: "translateZ(0)" }}
-    />
-  );
-});
-
 export default function HeroSection() {
   const { t } = useLanguage();
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
-  const shouldReduceMotion = useReducedMotion(); // Respeta preferencias del SO
-
-  // ============================================
-  // 4. SCROLL PARALLAX OPTIMIZADO
-  // ============================================
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  // useSpring suaviza los cálculos de scroll (menos frames perdidos)
-  const smoothProgress = useSpring(scrollYProgress, { 
-    stiffness: 100, 
-    damping: 30, 
-    restDelta: 0.001 
-  });
-
-  // En móvil o reduced-motion: desactivar parallax complejo
-  const bgY = useTransform(smoothProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(smoothProgress, [0, 0.8], [1, 0]);
-
-  // Si reduced motion o móvil: valores estáticos para evitar cálculos por frame
-  const motionStyle = shouldReduceMotion || isMobile
-    ? { y: 0, opacity: 1 }
-    : { y: textY, opacity };
-
-  const bgStyle = shouldReduceMotion || isMobile
-    ? { y: 0 }
-    : { y: bgY };
-
-  // ============================================
-  // 5. REDUCIR ELEMENTOS DECORATIVOS EN MÓVIL
-  // ============================================
-  const particles = useMemo(() => {
-    if (isMobile) {
-      // Solo 3 partículas en móvil vs 7 en desktop
-      return [
-        { delay: 0, x: "10%", y: "70%", size: 6 },
-        { delay: 2, x: "75%", y: "60%", size: 8 },
-        { delay: 1, x: "90%", y: "45%", size: 4 },
-      ];
-    }
-    return [
-      { delay: 0, x: "10%", y: "70%", size: 6 },
-      { delay: 1.5, x: "25%", y: "80%", size: 4 },
-      { delay: 3, x: "75%", y: "60%", size: 8 },
-      { delay: 0.5, x: "85%", y: "75%", size: 5 },
-      { delay: 2, x: "50%", y: "85%", size: 3 },
-      { delay: 4, x: "15%", y: "50%", size: 5 },
-      { delay: 1, x: "90%", y: "45%", size: 4 },
-      { delay: 2.5, x: "60%", y: "90%", size: 6 },
-    ];
-  }, [isMobile]);
-
-  const lines = useMemo(() => {
-    if (isMobile) {
-      // Solo 2 líneas en móvil vs 6
-      return [
-        { delay: 0, className: "absolute left-[8%] bottom-0 w-[2px] h-[40%]" },
-        { delay: 0.6, className: "absolute right-[10%] bottom-0 w-[2px] h-[35%]" },
-      ];
-    }
-    return [
-      { delay: 0, className: "absolute left-[8%] bottom-0 w-[2px] h-[40%]" },
-      { delay: 0.3, className: "absolute left-[12%] bottom-0 w-[1px] h-[25%]" },
-      { delay: 0.6, className: "absolute right-[10%] bottom-0 w-[2px] h-[35%]" },
-      { delay: 0.9, className: "absolute right-[14%] bottom-0 w-[1px] h-[20%]" },
-      { delay: 1.2, className: "absolute left-[20%] bottom-0 w-[1px] h-[15%]" },
-      { delay: 1.5, className: "absolute right-[22%] bottom-0 w-[1.5px] h-[28%]" },
-    ];
-  }, [isMobile]);
 
   return (
     <section
       id="hero"
-      ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background Image - GPU layer */}
-      <motion.div 
-        className="absolute inset-0 z-0" 
-        style={{ ...bgStyle, willChange: "transform", transform: "translateZ(0)" }}
-      >
+      <div className="absolute inset-0 z-0">
         <div className="absolute inset-0">
           <Image
             src="/Parque_Imagen.avif"
@@ -204,77 +23,36 @@ export default function HeroSection() {
             priority
             className="object-cover object-center"
             sizes="100vw"
-            quality={isMobile ? 30 : 40} // Menor calidad en móvil
+            quality={30}
             loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C3A]/80 via-[#0A1C3A]/60 to-[#0A1C3A]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1C3A]/50 to-transparent" />
-      </motion.div>
-
-      {/* Floating Particles - memoizadas y reducidas */}
-      {particles.map((p, i) => (
-        <FloatingParticle key={i} {...p} isMobile={isMobile} />
-      ))}
-
-      {/* Decorative Lines - CSS nativo en móvil */}
-      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-        {lines.map((l, i) => (
-          <AnimatedLine key={i} {...l} isMobile={isMobile} />
-        ))}
       </div>
 
       {/* Content */}
-      <motion.div 
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" 
-        style={motionStyle}
-      >
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-6"
-        >
+        <div className="mb-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-[Arimo] leading-tight">
             <span className="block text-white/90">{t("heroTitle")}</span>
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="inline-block mt-2 bg-gradient-to-r from-[#F89C24] via-[#fbbf24] to-[#F89C24] bg-clip-text text-transparent"
-              style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
-            >
+            <span className="inline-block mt-2 bg-gradient-to-r from-[#F89C24] via-[#fbbf24] to-[#F89C24] bg-clip-text text-transparent">
               {t("heroTitleHighlight")}
-            </motion.span>
+            </span>
           </h1>
-        </motion.div>
+        </div>
 
         {/* Decorative line under title */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mx-auto w-32 h-[2px] bg-gradient-to-r from-transparent via-[#F89C24] to-transparent mb-8"
-        />
+        <div className="mx-auto w-32 h-[2px] bg-gradient-to-r from-transparent via-[#F89C24] to-transparent mb-8" />
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-10 font-[Arimo] leading-relaxed"
-        >
+        <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-10 font-[Arimo] leading-relaxed">
           {t("heroSubtitle")}
-        </motion.p>
+        </p>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#donate">
             <Button
               size="lg"
@@ -293,25 +71,12 @@ export default function HeroSection() {
               {t("heroLearnMore")}
             </Button>
           </a>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      {/* Scroll Indicator - ocultar en móvil si reduced motion */}
-      {!shouldReduceMotion && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <motion.div
-            animate={isMobile ? undefined : { y: [0, 10, 0] }} // Sin animación en móvil
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
-          >
-            <ArrowDown className="h-6 w-6 text-white/50" />
-          </motion.div>
-        </motion.div>
-      )}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
+        <ArrowDown className="h-6 w-6 text-white/50" />
+      </div>
     </section>
   );
 }
