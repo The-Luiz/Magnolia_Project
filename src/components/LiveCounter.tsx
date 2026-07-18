@@ -81,7 +81,7 @@ export default function LiveCounter() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-xs tracking-[0.2em] text-muted-foreground font-[Arimo] mb-4">
+          <p className="text-xs tracking-[0.05em] text-muted-foreground font-[Arimo] font-bold mb-4">
             {t("counterBadge").toUpperCase()}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[Arimo] mb-4">
@@ -101,7 +101,7 @@ export default function LiveCounter() {
           <>
             {/* Main Balance */}
             <div className="text-center mb-12">
-              <p className="text-xs tracking-[0.15em] text-muted-foreground font-[Arimo] mb-4">
+              <p className="text-xs tracking-[0.05em] text-muted-foreground font-[Arimo] font-bold mb-4">
                 {t("counterRaised").toUpperCase()}
               </p>
               <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground font-[Arimo] mb-3 tracking-tight">

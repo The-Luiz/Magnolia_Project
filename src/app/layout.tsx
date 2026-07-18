@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   title: "Magnolia Bitcoin Memorial | Honrando a Satoshi Nakamoto",
   description:
     "Un santuario al aire libre de 118 acres dedicado a celebrar la contribución de Satoshi Nakamoto y Bitcoin a la humanidad. Únete a nuestra recaudación de fondos.",
+  icons: {
+    icon: [{ url: "/imagen-ico.png", type: "image/png" }],
+    shortcut: "/imagen-ico.png",
+  },
   keywords: [
     "Bitcoin",
     "Satoshi Nakamoto",
