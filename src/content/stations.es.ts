@@ -42,7 +42,12 @@ export const stations: Station[] = [
     thumbnail: "/trail/the-problem/thumb.avif",
     category: "economía",
     images: [
-      { src: "/trail/the-problem/01.avif", alt: "Gráfico de la pérdida de poder adquisitivo del dólar desde 1913" },
+      {
+        src: "/trail/the-problem/01.avif",
+        alt: "Gráfico de la pérdida de poder adquisitivo del dólar desde 1913",
+        fit: "contain",
+        background: "light",
+      },
       { src: "/trail/the-problem/02.avif", alt: "Máquina de imprimir billetes en un banco central" },
     ],
   },
@@ -58,7 +63,12 @@ export const stations: Station[] = [
     category: "historia",
     images: [
       { src: "/trail/satoshi-vision/01.avif", alt: "Página del whitepaper de Bitcoin con fórmulas matemáticas" },
-      { src: "/trail/satoshi-vision/02.avif", alt: "Código del bloque génesis con el mensaje de Satoshi incrustado" },
+      {
+        src: "/trail/satoshi-vision/02.avif",
+        alt: "Código del bloque génesis con el mensaje de Satoshi incrustado",
+        fit: "contain",
+        background: "dark",
+      },
     ],
   },
   {

@@ -12,6 +12,13 @@ export type StationCategory =
   | "filosofía"
   | "economía";
 
+export interface StationImage {
+  src: string;
+  alt: string;
+  fit?: "cover" | "contain";
+  background?: "light" | "dark";
+}
+
 export interface Station {
   slug: string;
   number: number;
@@ -20,7 +27,7 @@ export interface Station {
   icon?: string;
   content: string;
   contentEs?: string;
-  images?: { src: string; alt: string }[];
+  images?: StationImage[];
   thumbnail?: string;
   category?: StationCategory;
 }

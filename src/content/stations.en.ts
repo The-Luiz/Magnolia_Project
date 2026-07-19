@@ -42,7 +42,12 @@ export const stations: Station[] = [
     thumbnail: "/trail/the-problem/thumb.avif",
     category: "economía",
     images: [
-      { src: "/trail/the-problem/01.avif", alt: "Chart of US dollar purchasing power loss since 1913" },
+      {
+        src: "/trail/the-problem/01.avif",
+        alt: "Chart of US dollar purchasing power loss since 1913",
+        fit: "contain",
+        background: "light",
+      },
       { src: "/trail/the-problem/02.avif", alt: "Money printing press at a central bank" },
     ],
   },
@@ -58,7 +63,12 @@ export const stations: Station[] = [
     category: "historia",
     images: [
       { src: "/trail/satoshi-vision/01.avif", alt: "Bitcoin whitepaper page with mathematical formulas" },
-      { src: "/trail/satoshi-vision/02.avif", alt: "Genesis block code with Satoshi's embedded message" },
+      {
+        src: "/trail/satoshi-vision/02.avif",
+        alt: "Genesis block code with Satoshi's embedded message",
+        fit: "contain",
+        background: "dark",
+      },
     ],
   },
   {

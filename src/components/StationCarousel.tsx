@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import type { StationImage } from "@/lib/stations";
+import { cn } from "@/lib/utils";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +13,7 @@ import {
 } from "@/components/ui/carousel";
 
 interface StationCarouselProps {
-  images: { src: string; alt: string }[];
+  images: StationImage[];
 }
 
 export default function StationCarousel({ images }: StationCarouselProps) {
@@ -31,12 +33,25 @@ export default function StationCarousel({ images }: StationCarouselProps) {
         <CarouselContent>
           {images.map((img) => (
             <CarouselItem key={img.src}>
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted border border-border">
+              <div
+                className={cn(
+                  "relative aspect-video rounded-2xl overflow-hidden border border-border",
+                  img.background === "light"
+                    ? "bg-white"
+                    : img.background === "dark"
+                      ? "bg-black"
+                      : "bg-muted"
+                )}
+              >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover"
+                  className={cn(
+                    img.fit === "contain"
+                      ? "object-contain p-2 sm:p-3"
+                      : "object-cover"
+                  )}
                   sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
                 />
               </div>
