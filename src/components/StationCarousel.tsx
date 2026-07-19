@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -28,40 +29,16 @@ export default function StationCarousel({ images }: StationCarouselProps) {
         className="w-full max-w-3xl mx-auto"
       >
         <CarouselContent>
-          {images.map((img, i) => (
-            <CarouselItem key={i}>
+          {images.map((img) => (
+            <CarouselItem key={img.src}>
               <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted border border-border">
-                {/* 
-                  Para agregar la imagen:
-                  1. Coloca el archivo en: public{img.src}
-                  2. Descomenta el componente Image de abajo
-                  3. Ajusta el quality si es necesario
-
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 768px"
-                    loading="lazy"
-                  />
-                */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-accent font-[Arimo]">
-                        {i + 1}
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground font-[Arimo] max-w-xs mx-auto">
-                      {/* img.alt — disponible cuando la imagen esté agregada */}
-                      {img.alt}
-                    </p>
-                    <p className="text-xs text-muted-foreground/60 mt-2 font-mono">
-                      {img.src}
-                    </p>
-                  </div>
-                </div>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                />
               </div>
             </CarouselItem>
           ))}
