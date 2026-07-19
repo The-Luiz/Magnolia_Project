@@ -12,8 +12,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/welcome/thumb.avif",
     category: "fundamentos",
     images: [
-      { src: "/trail/welcome/gallery/01.avif", alt: "Entrada del sendero con señalización del Bitcoin Trail" },
-      { src: "/trail/welcome/gallery/02.avif", alt: "Vista panorámica del Magnolia Bitcoin Trail al amanecer" },
+      { src: "/trail/welcome/01.avif", alt: "Entrada del sendero con señalización del Bitcoin Trail" },
+      { src: "/trail/welcome/02.avif", alt: "Vista panorámica del Magnolia Bitcoin Trail al amanecer" },
     ],
   },
   {
@@ -27,8 +27,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/what-is-money/thumb.avif",
     category: "fundamentos",
     images: [
-      { src: "/trail/what-is-money/gallery/01.avif", alt: "Antiguas monedas de oro y plata de diferentes civilizaciones" },
-      { src: "/trail/what-is-money/gallery/02.avif", alt: "Evolución del dinero: conchas, monedas, billetes y bitcoin" },
+      { src: "/trail/what-is-money/01.avif", alt: "Antiguas monedas de oro y plata de diferentes civilizaciones" },
+      { src: "/trail/what-is-money/02.avif", alt: "Evolución del dinero: conchas, monedas, billetes y bitcoin" },
     ],
   },
   {
@@ -42,8 +42,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/the-problem/thumb.avif",
     category: "economía",
     images: [
-      { src: "/trail/the-problem/gallery/01.avif", alt: "Gráfico de la pérdida de poder adquisitivo del dólar desde 1913" },
-      { src: "/trail/the-problem/gallery/02.avif", alt: "Máquina de imprimir billetes en un banco central" },
+      { src: "/trail/the-problem/01.avif", alt: "Gráfico de la pérdida de poder adquisitivo del dólar desde 1913" },
+      { src: "/trail/the-problem/02.avif", alt: "Máquina de imprimir billetes en un banco central" },
     ],
   },
   {
@@ -57,8 +57,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/satoshi-vision/thumb.avif",
     category: "historia",
     images: [
-      { src: "/trail/satoshi-vision/gallery/01.avif", alt: "Página del whitepaper de Bitcoin con fórmulas matemáticas" },
-      { src: "/trail/satoshi-vision/gallery/02.avif", alt: "Código del bloque génesis con el mensaje de Satoshi incrustado" },
+      { src: "/trail/satoshi-vision/01.avif", alt: "Página del whitepaper de Bitcoin con fórmulas matemáticas" },
+      { src: "/trail/satoshi-vision/02.avif", alt: "Código del bloque génesis con el mensaje de Satoshi incrustado" },
     ],
   },
   {
@@ -72,8 +72,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/how-bitcoin-works/thumb.avif",
     category: "tecnología",
     images: [
-      { src: "/trail/how-bitcoin-works/gallery/01.avif", alt: "Representación visual de bloques encadenados en la blockchain" },
-      { src: "/trail/how-bitcoin-works/gallery/02.avif", alt: "Nodos de la red Bitcoin conectados globalmente" },
+      { src: "/trail/how-bitcoin-works/01.avif", alt: "Representación visual de bloques encadenados en la blockchain" },
+      { src: "/trail/how-bitcoin-works/02.avif", alt: "Nodos de la red Bitcoin conectados globalmente" },
     ],
   },
   {
@@ -87,8 +87,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/decentralization/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/decentralization/gallery/01.avif", alt: "Red de nodos descentralizados conectados en todo el planeta" },
-      { src: "/trail/decentralization/gallery/02.avif", alt: "Contraste entre sistema centralizado y descentralizado" },
+      { src: "/trail/decentralization/01.avif", alt: "Red de nodos descentralizados conectados en todo el planeta" },
+      { src: "/trail/decentralization/02.avif", alt: "Contraste entre sistema centralizado y descentralizado" },
     ],
   },
   {
@@ -102,8 +102,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/self-custody/thumb.avif",
     category: "tecnología",
     images: [
-      { src: "/trail/self-custody/gallery/01.avif", alt: "Hardware wallet mostrando claves privadas de forma segura" },
-      { src: "/trail/self-custody/gallery/02.avif", alt: "Persona sosteniendo su propia wallet con soberanía financiera" },
+      { src: "/trail/self-custody/01.avif", alt: "Hardware wallet mostrando claves privadas de forma segura" },
+      { src: "/trail/self-custody/02.avif", alt: "Persona sosteniendo su propia wallet con soberanía financiera" },
     ],
   },
   {
@@ -117,8 +117,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/the-halving/thumb.avif",
     category: "economía",
     images: [
-      { src: "/trail/the-halving/gallery/01.avif", alt: "Gráfico del calendario de halvings de Bitcoin desde 2009" },
-      { src: "/trail/the-halving/gallery/02.avif", alt: "Comparación visual de la reducción de recompensa por bloque" },
+      { src: "/trail/the-halving/01.avif", alt: "Gráfico del calendario de halvings de Bitcoin desde 2009" },
+      { src: "/trail/the-halving/02.avif", alt: "Comparación visual de la reducción de recompensa por bloque" },
     ],
   },
   {
@@ -132,8 +132,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/lightning-network/thumb.avif",
     category: "tecnología",
     images: [
-      { src: "/trail/lightning-network/gallery/01.avif", alt: "Red de canales de pago Lightning Network interconectados" },
-      { src: "/trail/lightning-network/gallery/02.avif", alt: "Pago instantáneo con Bitcoin a través de Lightning en un comercio" },
+      { src: "/trail/lightning-network/01.avif", alt: "Red de canales de pago Lightning Network interconectados" },
+      { src: "/trail/lightning-network/02.avif", alt: "Pago instantáneo con Bitcoin a través de Lightning en un comercio" },
     ],
   },
   {
@@ -147,8 +147,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/only-21-million/thumb.avif",
     category: "fundamentos",
     images: [
-      { src: "/trail/only-21-million/gallery/01.avif", alt: "Representación visual del límite de 21 millones de Bitcoin" },
-      { src: "/trail/only-21-million/gallery/02.avif", alt: "Curva de emisión de Bitcoin mostrando la reducción de oferta con el tiempo" },
+      { src: "/trail/only-21-million/01.avif", alt: "Representación visual del límite de 21 millones de Bitcoin" },
+      { src: "/trail/only-21-million/02.avif", alt: "Curva de emisión de Bitcoin mostrando la reducción de oferta con el tiempo" },
     ],
   },
   {
@@ -162,8 +162,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/not-your-keys/thumb.avif",
     category: "fundamentos",
     images: [
-      { src: "/trail/not-your-keys/gallery/01.avif", alt: "Hardware wallet y frase semilla de respaldo en una placa de acero" },
-      { src: "/trail/not-your-keys/gallery/02.avif", alt: "Manos sosteniendo una llave con el símbolo de Bitcoin" },
+      { src: "/trail/not-your-keys/01.avif", alt: "Hardware wallet y frase semilla de respaldo en una placa de acero" },
+      { src: "/trail/not-your-keys/02.avif", alt: "Manos sosteniendo una llave con el símbolo de Bitcoin" },
     ],
   },
   {
@@ -177,8 +177,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/permissionless/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/permissionless/gallery/01.avif", alt: "Mapa del mundo con rutas de transacciones Bitcoin conectando continentes" },
-      { src: "/trail/permissionless/gallery/02.avif", alt: "Persona enviando Bitcoin desde un teléfono en un entorno rural" },
+      { src: "/trail/permissionless/01.avif", alt: "Mapa del mundo con rutas de transacciones Bitcoin conectando continentes" },
+      { src: "/trail/permissionless/02.avif", alt: "Persona enviando Bitcoin desde un teléfono en un entorno rural" },
     ],
   },
   {
@@ -192,8 +192,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/banking-the-unbanked/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/banking-the-unbanked/gallery/01.avif", alt: "Persona en zona rural usando un smartphone básico para recibir Bitcoin" },
-      { src: "/trail/banking-the-unbanked/gallery/02.avif", alt: "Mapa de adopción de Bitcoin mostrando crecimiento en economías en desarrollo" },
+      { src: "/trail/banking-the-unbanked/01.avif", alt: "Persona en zona rural usando un smartphone básico para recibir Bitcoin" },
+      { src: "/trail/banking-the-unbanked/02.avif", alt: "Mapa de adopción de Bitcoin mostrando crecimiento en economías en desarrollo" },
     ],
   },
   {
@@ -207,8 +207,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/generational-wealth/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/generational-wealth/gallery/01.avif", alt: "Tres generaciones de una familia caminando juntas por un sendero del bosque" },
-      { src: "/trail/generational-wealth/gallery/02.avif", alt: "Placa de acero con frase semilla representando una herencia duradera" },
+      { src: "/trail/generational-wealth/01.avif", alt: "Tres generaciones de una familia caminando juntas por un sendero del bosque" },
+      { src: "/trail/generational-wealth/02.avif", alt: "Placa de acero con frase semilla representando una herencia duradera" },
     ],
   },
   {
@@ -222,8 +222,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/bitcoin-and-energy/thumb.avif",
     category: "tecnología",
     images: [
-      { src: "/trail/bitcoin-and-energy/gallery/01.avif", alt: "Instalación de minería de Bitcoin alimentada por energía hidroeléctrica renovable" },
-      { src: "/trail/bitcoin-and-energy/gallery/02.avif", alt: "Operación de minería Bitcoin geotérmica en Islandia" },
+      { src: "/trail/bitcoin-and-energy/01.avif", alt: "Instalación de minería de Bitcoin alimentada por energía hidroeléctrica renovable" },
+      { src: "/trail/bitcoin-and-energy/02.avif", alt: "Operación de minería Bitcoin geotérmica en Islandia" },
     ],
   },
   {
@@ -237,8 +237,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/bitcoin-vs-gold/thumb.avif",
     category: "economía",
     images: [
-      { src: "/trail/bitcoin-vs-gold/gallery/01.avif", alt: "Lingotes de oro junto a un símbolo de Bitcoin representando la comparación" },
-      { src: "/trail/bitcoin-vs-gold/gallery/02.avif", alt: "Gráfico de comparación de propiedades del dinero: oro vs Bitcoin" },
+      { src: "/trail/bitcoin-vs-gold/01.avif", alt: "Lingotes de oro junto a un símbolo de Bitcoin representando la comparación" },
+      { src: "/trail/bitcoin-vs-gold/02.avif", alt: "Gráfico de comparación de propiedades del dinero: oro vs Bitcoin" },
     ],
   },
   {
@@ -252,8 +252,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/global-adoption/thumb.avif",
     category: "historia",
     images: [
-      { src: "/trail/global-adoption/gallery/01.avif", alt: "Bitcoin Beach en El Zonte, El Salvador" },
-      { src: "/trail/global-adoption/gallery/02.avif", alt: "Estatua de Satoshi en Lugano, Suiza" },
+      { src: "/trail/global-adoption/01.avif", alt: "Bitcoin Beach en El Zonte, El Salvador" },
+      { src: "/trail/global-adoption/02.avif", alt: "Estatua de Satoshi en Lugano, Suiza" },
     ],
   },
   {
@@ -267,8 +267,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/responsibility/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/responsibility/gallery/01.avif", alt: "Persona escribiendo cuidadosamente una frase semilla de Bitcoin como respaldo" },
-      { src: "/trail/responsibility/gallery/02.avif", alt: "Brújula en un sendero del bosque representando la navegación soberana" },
+      { src: "/trail/responsibility/01.avif", alt: "Persona escribiendo cuidadosamente una frase semilla de Bitcoin como respaldo" },
+      { src: "/trail/responsibility/02.avif", alt: "Brújula en un sendero del bosque representando la navegación soberana" },
     ],
   },
   {
@@ -282,8 +282,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/bitcoin-in-magnolia/thumb.avif",
     category: "historia",
     images: [
-      { src: "/trail/bitcoin-in-magnolia/gallery/01.avif", alt: "Señalización de Bitcoin aceptado en la entrada de Magnolia Streamside Resort" },
-      { src: "/trail/bitcoin-in-magnolia/gallery/02.avif", alt: "Pago Lightning siendo realizado en el centro de bienestar de Magnolia" },
+      { src: "/trail/bitcoin-in-magnolia/01.avif", alt: "Señalización de Bitcoin aceptado en la entrada de Magnolia Streamside Resort" },
+      { src: "/trail/bitcoin-in-magnolia/02.avif", alt: "Pago Lightning siendo realizado en el centro de bienestar de Magnolia" },
     ],
   },
   {
@@ -297,8 +297,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/the-future/thumb.avif",
     category: "filosofía",
     images: [
-      { src: "/trail/the-future/gallery/01.avif", alt: "Visualización abstracta de la Lightning Network expandiéndose globalmente" },
-      { src: "/trail/the-future/gallery/02.avif", alt: "Capas del protocolo Bitcoin mostrando la cadena base y Lightning Network" },
+      { src: "/trail/the-future/01.avif", alt: "Visualización abstracta de la Lightning Network expandiéndose globalmente" },
+      { src: "/trail/the-future/02.avif", alt: "Capas del protocolo Bitcoin mostrando la cadena base y Lightning Network" },
     ],
   },
   {
@@ -312,8 +312,8 @@ export const stations: Station[] = [
     thumbnail: "/trail/your-journey-begins/thumb.avif",
     category: "fundamentos",
     images: [
-      { src: "/trail/your-journey-begins/gallery/01.avif", alt: "Vista de la estación final con luz solar filtrándose por el bosque de Magnolia" },
-      { src: "/trail/your-journey-begins/gallery/02.avif", alt: "El arroyo de Magnolia a la hora dorada marcando el final del sendero" },
+      { src: "/trail/your-journey-begins/01.avif", alt: "Vista de la estación final con luz solar filtrándose por el bosque de Magnolia" },
+      { src: "/trail/your-journey-begins/02.avif", alt: "El arroyo de Magnolia a la hora dorada marcando el final del sendero" },
     ],
   },
 ];

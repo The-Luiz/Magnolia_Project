@@ -73,6 +73,11 @@ export default function Header() {
             >
               {t("navTrail")}
             </Link>
+            <Link
+            href="https://www.bitcoinespressobar.com/"
+            className="px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 font-[Arimo] font-medium">
+            Espresso Bar
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -165,6 +170,13 @@ export default function Header() {
                   {t("navDonate")}
                 </Button>
               </a>
+              <Link 
+              href="https://www.bitcoinespressobar.com/" 
+              onClick={closeMobile} 
+              className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-[Arimo] font-medium"
+              >
+                Espresso Bar
+              </Link>
             </div>
           </nav>
       )}
